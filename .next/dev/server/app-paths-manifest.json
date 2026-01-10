@@ -1,0 +1,11 @@
+{
+  "/about/page": "app/about/page.js",
+  "/clubs/[slug]/page": "app/clubs/[slug]/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/donate/page": "app/donate/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/news/page": "app/news/page.js",
+  "/page": "app/page.js",
+  "/resources/page": "app/resources/page.js",
+  "/shop/page": "app/shop/page.js"
+}
