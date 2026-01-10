@@ -10,6 +10,7 @@ All requested features have been implemented:
 Create `.env.local` file with:
 
 ```env
+# Get your keys from: https://dashboard.paystack.com/#/settings/developer
 NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY=pk_live_YOUR_LIVE_PUBLIC_KEY
 PAYSTACK_SECRET_KEY=sk_live_YOUR_LIVE_SECRET_KEY
 NEXT_PUBLIC_SITE_URL=https://kendoghana.com

@@ -10,6 +10,7 @@ Create a `.env.local` file in the root directory with the following:
 
 ```env
 # Paystack Live Keys (Production)
+# Get your keys from: https://dashboard.paystack.com/#/settings/developer
 NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY=pk_live_YOUR_LIVE_PUBLIC_KEY
 PAYSTACK_SECRET_KEY=sk_live_YOUR_LIVE_SECRET_KEY
 
