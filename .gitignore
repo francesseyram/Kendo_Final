@@ -6,6 +6,7 @@ yarn.lock
 # Build output
 dist/
 build/
+out/
 
 # Environment variables
 .env
@@ -42,3 +43,20 @@ prisma/migrations/
 # Temporary files
 tmp/
 temp/
+
+# Next.js
+.next/
+.vercel/
+
+# Duplicate files (OS or editor generated - files with spaces and numbers)
+**/* 2.*
+**/* 2
+**/* 3.*
+**/* 3
+**/*-copy.*
+**/*-Copy.*
+**/*-duplicate.*
+
+# Editor backup files
+*.bak
+*.tmp
