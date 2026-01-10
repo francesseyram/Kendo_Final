@@ -47,7 +47,7 @@ export default function AboutPage() {
           {/* Statement Image */}
           <div className="relative mb-12 sm:mb-16 md:mb-20">
             <Image
-              src="/gallery_images/1st_national_inter_kendo/newpic3.jpeg"
+              src="/gallery_images/saturday_training/practice_14.jpg"
               alt="Kendo training in Ghana"
               width={1200}
               height={600}
