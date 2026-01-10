@@ -7,23 +7,11 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Ghana Kendo Federation",
   description: "Promoting the way of the sword in Ghana through traditional Japanese Kendo",
-  generator: "v0.app",
+  generator: "Sentinel360",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/Logos/kendo_logo.png",
+    apple: "/Logos/kendo_logo.png",
+    shortcut: "/Logos/kendo_logo.png",
   },
   // Performance optimizations
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://kendoghana.com'),
@@ -39,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <Providers>
           {children}
         </Providers>

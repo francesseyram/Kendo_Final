@@ -73,21 +73,37 @@ export default function ShopPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <div className="container mx-auto px-4 py-24">
-        {/* Header */}
-        <div className="max-w-4xl mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Kendo Equipment
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Authentic Kendo equipment curated by the Ghana Kendo Federation.
-            All items are available upon request to ensure proper sizing, quality,
-            and suitability for your level of practice.
-          </p>
-        </div>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
+        {/* Grid background pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
 
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-block mb-6 px-4 py-2 rounded-full glass border border-primary/20 animate-pulse-glow">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Shop</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-balance text-gradient">
+              Kendo Equipment
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed text-pretty max-w-3xl mx-auto">
+              Authentic Kendo equipment curated by the Ghana Kendo Federation.
+              All items are available upon request to ensure proper sizing, quality,
+              and suitability for your level of practice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 py-12">
         {/* Products */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {products.map((product) => (
             <Card
               key={product.id}
@@ -105,7 +121,6 @@ export default function ShopPage() {
                 <div className="absolute top-3 left-3 bg-background/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold">
                   Available on request
                 </div>
-             a
               </div>
 
               <div className="p-6 flex flex-col h-full">
@@ -134,7 +149,7 @@ export default function ShopPage() {
         </div>
 
         {/* Info Section */}
-        <div className="mt-20 max-w-4xl">
+        <div className="mt-20 max-w-5xl mx-auto">
           <Card className="p-8 bg-muted/50">
             <h3 className="text-2xl font-bold mb-4">
               How Equipment Requests Work

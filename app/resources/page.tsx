@@ -64,20 +64,36 @@ export default function ResourcesPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <div className="container mx-auto px-4 py-24">
-        {/* Page Header */}
-        <div className="max-w-4xl mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Resources
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Access official documents, forms, and trusted external resources for
-            Kendo practitioners.
-          </p>
-        </div>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
+        {/* Grid background pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
 
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-block mb-6 px-4 py-2 rounded-full glass border border-primary/20 animate-pulse-glow">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Resources</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-balance text-gradient">
+              Resources
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed text-pretty max-w-3xl mx-auto">
+              Access official documents, forms, and trusted external resources for
+              Kendo practitioners.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 py-12">
         {/* Downloads */}
-        <div className="max-w-5xl mb-20">
+        <div className="max-w-7xl mx-auto mb-20">
           <h2 className="text-3xl font-bold mb-8">Documents</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {resources.map((resource) => (
@@ -86,8 +102,8 @@ export default function ResourcesPage() {
                 className="p-6 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 bg-kendo-red/10 rounded-lg flex items-center justify-center shrink-0">
-                    <FileText className="h-6 w-6 text-kendo-red" />
+                  <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <FileText className="h-6 w-6 text-primary" />
                   </div>
 
                   <div className="flex-1 min-w-0">
@@ -127,7 +143,7 @@ export default function ResourcesPage() {
         </div>
 
         {/* External Resources */}
-        <div className="max-w-5xl">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-8">External Resources</h2>
           <div className="space-y-4">
             {externalLinks.map((link) => (

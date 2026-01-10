@@ -49,8 +49,8 @@ export default function ClubsPage() {
 
       <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
         {/* Hero Section */}
-        <div className="max-w-4xl mb-12 sm:mb-16 md:mb-20">
-          <div className="inline-block mb-4 sm:mb-6 px-4 py-2 rounded-full glass border border-primary/20">
+        <div className="max-w-5xl mx-auto text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="inline-block mb-4 sm:mb-6 px-4 py-2 rounded-full glass border border-primary/20 animate-pulse-glow">
             <span className="text-xs font-semibold uppercase tracking-wider text-primary">
               Member Clubs
             </span>
@@ -58,15 +58,15 @@ export default function ClubsPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-balance text-gradient">
             Member Clubs
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             The Ghana Kendo Federation oversees officially recognized dojos across the country,
             each upholding the principles and discipline of Kendo.
           </p>
-          <div className="mt-6 sm:mt-8 h-0.5 w-24 bg-primary/60" />
+          <div className="mt-6 sm:mt-8 h-0.5 w-24 bg-primary/60 mx-auto" />
         </div>
 
         {/* Regions */}
-        <div className="space-y-12 sm:space-y-16 max-w-6xl mx-auto">
+        <div className="space-y-12 sm:space-y-16 max-w-7xl mx-auto">
           {regions.map((region, regionIndex) => (
             <div
               key={region.name}

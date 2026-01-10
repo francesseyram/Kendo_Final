@@ -4,7 +4,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Black and red color scheme inspired by the reference image */
+  /* Light mode: bright white background with red accents */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.62 0.25 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0 0);
+  --secondary-foreground: oklch(0.25 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.62 0.25 25);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.62 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.62 0.25 25);
+  --radius: 0.75rem;
+  --chart-1: oklch(0.62 0.25 25);
+  --chart-2: oklch(0.35 0 0);
+  --chart-3: oklch(0.5 0 0);
+  --chart-4: oklch(0.65 0 0);
+  --chart-5: oklch(0.8 0 0);
+  --sidebar: oklch(0.97 0 0);
+  --sidebar-foreground: oklch(0.2 0 0);
+  --sidebar-primary: oklch(0.62 0.25 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.92 0 0);
+  --sidebar-accent-foreground: oklch(0.25 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.62 0.25 25);
+}
+
+.dark {
+  /* Dark mode: black background with red accents (original design) */
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.12 0 0);
@@ -24,7 +61,6 @@
   --border: oklch(0.2 0 0);
   --input: oklch(0.2 0 0);
   --ring: oklch(0.62 0.25 25);
-  --radius: 0.75rem;
   --chart-1: oklch(0.62 0.25 25);
   --chart-2: oklch(0.18 0 0);
   --chart-3: oklch(0.3 0 0);
@@ -105,13 +141,30 @@
     }
   }
 
+  /* Glass effect - light mode */
   .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* Glass effect - dark mode */
+  .dark .glass {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
+  /* Text gradient - light mode (slightly softer) */
   .text-gradient {
+    background: linear-gradient(135deg, oklch(0.55 0.22 25) 0%, oklch(0.7 0.2 30) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Text gradient - dark mode (more vibrant) */
+  .dark .text-gradient {
     background: linear-gradient(135deg, oklch(0.72 0.25 25) 0%, oklch(0.85 0.15 30) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -132,7 +185,19 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  /* Pulse glow - light mode (subtle) */
   @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.25);
+    }
+    50% {
+      box-shadow: 0 0 28px rgba(239, 68, 68, 0.4);
+    }
+  }
+
+  /* Pulse glow - dark mode (more intense) */
+  @keyframes pulse-glow-dark {
     0%,
     100% {
       box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
@@ -144,5 +209,9 @@
 
   .animate-pulse-glow {
     animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .dark .animate-pulse-glow {
+    animation: pulse-glow-dark 3s ease-in-out infinite;
   }
 }

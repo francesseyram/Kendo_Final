@@ -72,27 +72,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Animated scroll indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Scroll</span>
-          <div className="h-10 w-6 rounded-full border-2 border-primary/40 flex items-start justify-center p-1">
-            <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-          </div>
-        </div>
       </section>
 
       <section className="py-12 sm:py-16 md:py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             <div
-              className="group relative overflow-hidden rounded-xl p-8 glass border border-primary/20 hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
+              className="group relative overflow-hidden rounded-xl p-8 glass border border-primary/20 hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 text-center sm:text-left"
               data-aos="fade-up"
               data-aos-delay="0"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors" />
-              <div className="relative">
-                <div className="flex items-baseline gap-2 mb-3">
+              <div className="relative flex flex-col items-center sm:items-start">
+                <div className="flex items-baseline gap-2 mb-3 justify-center sm:justify-start">
                   <div className="text-5xl md:text-6xl font-bold text-gradient">8</div>
                   <div className="text-3xl font-bold text-primary/40">+</div>
                 </div>
@@ -101,13 +93,13 @@ export default function Home() {
             </div>
 
             <div
-              className="group relative overflow-hidden rounded-xl p-8 glass border border-primary/20 hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
+              className="group relative overflow-hidden rounded-xl p-8 glass border border-primary/20 hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 text-center sm:text-left"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors" />
-              <div className="relative">
-                <div className="flex items-baseline gap-2 mb-3">
+              <div className="relative flex flex-col items-center sm:items-start">
+                <div className="flex items-baseline gap-2 mb-3 justify-center sm:justify-start">
                   <div className="text-5xl md:text-6xl font-bold text-gradient">200</div>
                   <div className="text-3xl font-bold text-primary/40">+</div>
                 </div>
@@ -116,12 +108,12 @@ export default function Home() {
             </div>
 
             <div
-              className="group relative overflow-hidden rounded-xl p-8 glass border border-primary/20 hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10"
+              className="group relative overflow-hidden rounded-xl p-8 glass border border-primary/20 hover:border-primary/40 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 text-center sm:text-left"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors" />
-              <div className="relative">
+              <div className="relative flex flex-col items-center sm:items-start">
                 <div className="text-5xl md:text-6xl font-bold mb-3 text-gradient">2024</div>
                 <div className="text-sm text-muted-foreground font-medium">Year Founded</div>
               </div>

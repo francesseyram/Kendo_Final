@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import type React from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -15,6 +16,15 @@ export function Providers({ children }: { children: React.ReactNode }) {
     })
   }, [])
 
-  return <>{children}</>
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem={true}
+      disableTransitionOnChange={false}
+    >
+      {children}
+    </ThemeProvider>
+  )
 }
 

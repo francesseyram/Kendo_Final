@@ -26,8 +26,8 @@ export default function AboutPage() {
           />
 
           <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
-            <div className="max-w-3xl">
-              <span className="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-primary/20 text-xs uppercase tracking-widest text-primary">
+            <div className="max-w-5xl mx-auto text-center">
+              <span className="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-primary/20 animate-pulse-glow text-xs uppercase tracking-widest text-primary">
                 About Us
               </span>
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
                 The Way of the Sword in Ghana
               </h1>
 
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 The Ghana Kendo Federation is the national body dedicated to preserving,
                 developing, and representing the spirit and discipline of Kendo in Ghana.
               </p>
@@ -43,7 +43,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           {/* Statement Image */}
           <div className="relative mb-12 sm:mb-16 md:mb-20">
             <Image

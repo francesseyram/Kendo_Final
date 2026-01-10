@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,6 +17,12 @@ import {
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,11 +55,8 @@ export function Navigation() {
               alt="Ghana Kendo Federation Logo"
               className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
             />
-            <span className="text-foreground group-hover:text-gradient transition-all hidden sm:inline">
+            <span className="text-foreground group-hover:text-gradient transition-all text-xs sm:text-base md:text-xl">
               Ghana Kendo Federation
-            </span>
-            <span className="text-foreground group-hover:text-gradient transition-all sm:hidden">
-              GKF
             </span>
           </Link>
 
@@ -178,7 +182,7 @@ export function Navigation() {
             </NavigationMenu>
 
             <Link href="/news" className="text-sm font-medium hover:text-primary transition-colors">
-              News
+              Events
             </Link>
             <Link href="/gallery" className="text-sm font-medium hover:text-primary transition-colors">
               Gallery
@@ -192,6 +196,23 @@ export function Navigation() {
             <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
               Contact
             </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-9 w-9 rounded-full hover:bg-primary/10 transition-all"
+              aria-label="Toggle theme"
+            >
+              {mounted ? (
+                theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </Button>
             <Button
               size="sm"
               asChild
@@ -229,7 +250,7 @@ export function Navigation() {
               className="block text-base sm:text-lg hover:text-foreground/80 transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              News
+              Events
             </Link>
             <Link
               href="/gallery"
@@ -259,14 +280,33 @@ export function Navigation() {
             >
               Contact
             </Link>
-            <Button
-              asChild
-              className="w-full rounded-full bg-primary hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-primary/50"
-            >
-              <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
-                Donate
-              </Link>
-            </Button>
+            <div className="flex items-center gap-3 pt-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="h-9 w-9 rounded-full hover:bg-primary/10 transition-all"
+                aria-label="Toggle theme"
+              >
+                {mounted ? (
+                  theme === "dark" ? (
+                    <Sun className="h-5 w-5" />
+                  ) : (
+                    <Moon className="h-5 w-5" />
+                  )
+                ) : (
+                  <Sun className="h-5 w-5" />
+                )}
+              </Button>
+              <Button
+                asChild
+                className="flex-1 rounded-full bg-primary hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-primary/50"
+              >
+                <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
+                  Donate
+                </Link>
+              </Button>
+            </div>
           </div>
         )}
       </div>

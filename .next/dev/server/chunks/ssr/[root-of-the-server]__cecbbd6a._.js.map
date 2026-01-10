@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///Users/calebokwesiearthur/Desktop/Code/Kendo_Final/app/providers.tsx"],"sourcesContent":["\"use client\"\n\nimport { useEffect } from \"react\"\nimport type React from \"react\"\nimport AOS from \"aos\"\nimport \"aos/dist/aos.css\"\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  useEffect(() => {\n    AOS.init({\n      duration: 900,\n      easing: \"ease-out-cubic\",\n      once: true,\n      offset: 80,\n    })\n  }, [])\n\n  return <>{children}</>\n}\n\n"],"names":[],"mappings":";;;;;AAEA;AAEA;AAJA;;;;;AAOO,SAAS,UAAU,EAAE,QAAQ,EAAiC;IACnE,IAAA,oPAAS,EAAC;QACR,+KAAG,CAAC,IAAI,CAAC;YACP,UAAU;YACV,QAAQ;YACR,MAAM;YACN,QAAQ;QACV;IACF,GAAG,EAAE;IAEL,qBAAO;kBAAG;;AACZ"}}]
+}

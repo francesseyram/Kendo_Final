@@ -167,7 +167,7 @@ const newsLinks = [
 ]
 
 export const metadata = {
-  title: "News / Events - Ghana Kendo Federation",
+  title: "Events - Ghana Kendo Federation",
   description: "Stay updated with the latest news and upcoming events from Ghana Kendo Federation",
 }
 
@@ -177,23 +177,30 @@ export default function NewsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-b from-background via-background/95 to-background py-16 sm:py-20 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground"
-              data-aos="fade-up"
-            >
-              News / Events
+      <section className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
+        {/* Grid background pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
+
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-block mb-6 px-4 py-2 rounded-full glass border border-primary/20 animate-pulse-glow">
+              <span className="text-xs font-semibold uppercase tracking-wider text-primary">Events</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-balance text-gradient">
+              Events
             </h1>
-            <div
-              className="w-32 sm:w-40 h-0.5 bg-primary mx-auto"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            />
+            <p className="text-lg text-muted-foreground leading-relaxed text-pretty max-w-3xl mx-auto">
+              Stay updated with the latest news, upcoming events, and competitions from the Ghana Kendo Federation.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
@@ -234,12 +241,6 @@ export default function NewsPage() {
                     <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                     {featuredEvent.date}
                   </div>
-                  <Link
-                    href="/about#timeline"
-                    className="mt-4 sm:mt-6 text-xs text-primary underline hover:text-primary/80 transition-colors inline-block"
-                  >
-                    View in Federation Timeline →
-                  </Link>
                 </div>
               </Card>
             )}
@@ -276,17 +277,6 @@ export default function NewsPage() {
                       <Calendar className="h-3 w-3 flex-shrink-0" />
                       <span className="truncate">{event.date}</span>
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-foreground leading-tight group-hover:text-primary transition-colors line-clamp-2">
-                      {event.title}
-                    </h3>
-                    {event.type === "championship" && (
-                      <Link
-                        href="/about#timeline"
-                        className="mt-2 sm:mt-3 text-xs text-primary underline hover:text-primary/80 transition-colors inline-block"
-                      >
-                        View in Timeline →
-                      </Link>
-                    )}
                   </div>
                 </Card>
               ))}
