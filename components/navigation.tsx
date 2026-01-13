@@ -222,10 +222,27 @@ export function Navigation() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {mounted && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="h-9 w-9 rounded-full hover:bg-primary/10 transition-all"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </Button>
+            )}
+            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -280,27 +297,10 @@ export function Navigation() {
             >
               Contact
             </Link>
-            <div className="flex items-center gap-3 pt-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="h-9 w-9 rounded-full hover:bg-primary/10 transition-all"
-                aria-label="Toggle theme"
-              >
-                {mounted ? (
-                  theme === "dark" ? (
-                    <Sun className="h-5 w-5" />
-                  ) : (
-                    <Moon className="h-5 w-5" />
-                  )
-                ) : (
-                  <Sun className="h-5 w-5" />
-                )}
-              </Button>
+            <div className="pt-2">
               <Button
                 asChild
-                className="flex-1 rounded-full bg-primary hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-primary/50"
+                className="w-full rounded-full bg-primary hover:bg-primary/90 transition-all hover:scale-105 shadow-lg hover:shadow-primary/50"
               >
                 <Link href="/donate" onClick={() => setMobileMenuOpen(false)}>
                   Donate
