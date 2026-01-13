@@ -51,7 +51,7 @@ const products = [
   {
     id: 8,
     name: "Complete Bogu Set",
-    image: "/shop/kendo-bogu-complete-set.jpg",
+    image: "/shop/kendo-bogu-complete-set.jpeg",
     description: "Full protective armor set including men, kote, dō, and tare for safe and proper Kendo practice",
   },
   {
@@ -93,9 +93,7 @@ export default function ShopPage() {
               Kendo Equipment
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty max-w-3xl mx-auto">
-              Authentic Kendo equipment curated by the Ghana Kendo Federation.
-              All items are available upon request to ensure proper sizing, quality,
-              and suitability for your level of practice.
+              We partner with trusted suppliers outside Ghana to provide authentic Kendo equipment. All items are shipped internationally and will be available approximately two weeks after payment is made.
             </p>
           </div>
         </div>
@@ -109,7 +107,7 @@ export default function ShopPage() {
               key={product.id}
               className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="aspect-square relative bg-muted">
+              <div className="aspect-[4/5] relative bg-muted">
                 <Image
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
