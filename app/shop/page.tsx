@@ -39,7 +39,7 @@ const products = [
   {
     id: 6,
     name: "Kendo Tare",
-    image: "/shop/kendo-tare-waist-protection.jpg",
+    image: "/shop/kendo-tare-waist-protection.jpeg",
     description: "Waist and hip protector that guards the lower body and displays the kendoka’s name and dojo affiliation",
   },
   {

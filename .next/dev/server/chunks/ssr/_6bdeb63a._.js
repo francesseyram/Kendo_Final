@@ -61,7 +61,7 @@ const metadata = {
         shortcut: "/Logos/kendo_logo.png"
     },
     // Performance optimizations
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://kendoghana.com'),
+    metadataBase: new URL(("TURBOPACK compile-time value", "https://kendoghana.com") || 'https://kendoghana.com'),
     openGraph: {
         type: 'website',
         locale: 'en_US'
