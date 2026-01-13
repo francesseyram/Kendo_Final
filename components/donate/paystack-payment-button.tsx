@@ -53,6 +53,10 @@ interface PaystackPaymentButtonProps {
   className?: string
   variant?: "default" | "outline"
   size?: "default" | "sm" | "lg"
+  campaign?: string // Campaign name (e.g., "2nd Tunis International Open Championships")
+  donationType?: string // Donation type (e.g., "SPONSORSHIP", "General Donation")
+  anonymous?: boolean // Whether donation is anonymous
+  metadata?: Record<string, any> // Additional metadata
 }
 
 export function PaystackPaymentButton({
@@ -63,6 +67,10 @@ export function PaystackPaymentButton({
   className,
   variant = "default",
   size = "default",
+  campaign,
+  donationType,
+  anonymous = false,
+  metadata = {},
 }: PaystackPaymentButtonProps) {
   const [isScriptLoaded, setIsScriptLoaded] = useState(checkScriptLoaded())
   const [isProcessing, setIsProcessing] = useState(false)
@@ -160,21 +168,47 @@ export function PaystackPaymentButton({
     const reference = `GKF_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`
 
     try {
+      // Build metadata with campaign and donation type information
+      const customFields = [
+        {
+          display_name: "Donation Type",
+          variable_name: "donation_type",
+          value: donationType || description || "General Donation",
+        },
+      ]
+
+      if (campaign) {
+        customFields.push({
+          display_name: "Campaign",
+          variable_name: "campaign",
+          value: campaign,
+        })
+      }
+
+      if (anonymous) {
+        customFields.push({
+          display_name: "Anonymous",
+          variable_name: "anonymous",
+          value: "Yes",
+        })
+      }
+
+      // Merge additional metadata
+      const paymentMetadata = {
+        custom_fields: customFields,
+        donation_type: donationType || description || "General Donation",
+        campaign: campaign || null,
+        anonymous: anonymous,
+        ...metadata,
+      }
+
       const handler = window.PaystackPop.setup({
         key: publicKey,
         email: donorEmail,
         amount: amountInPesewas,
         currency: "GHS",
         ref: reference,
-        metadata: {
-          custom_fields: [
-            {
-              display_name: "Donation Type",
-              variable_name: "donation_type",
-              value: description || "General Donation",
-            },
-          ],
-        },
+        metadata: paymentMetadata,
         callback: function (response: { reference: string }) {
           // Track donation initiation (client-side)
           if (typeof window !== "undefined") {
@@ -183,9 +217,10 @@ export function PaystackPaymentButton({
               trackDonation({
                 amount: amount,
                 currency: "GHS",
-                donation_type: description || "General Donation",
+                donation_type: donationType || description || "General Donation",
                 reference: response.reference,
                 channel: "web",
+                campaign: campaign,
               })
             }).catch(() => {
               // Analytics not available, continue anyway

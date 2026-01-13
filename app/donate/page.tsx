@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { PaystackPaymentButton } from "@/components/donate/paystack-payment-button"
 import { CustomAmountForm } from "@/components/donate/custom-amount-form"
+import { TunisSponsorshipCard } from "@/components/donate/tunis-sponsorship-card"
 import { Check } from "lucide-react"
 import Link from "next/link"
 
@@ -75,6 +76,12 @@ export default function DonatePage() {
       </section>
 
       <div className="container mx-auto px-4 py-12">
+        {/* Special Sponsorship Campaign */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <TunisSponsorshipCard />
+        </div>
+
+        {/* Regular Donation Tiers */}
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
           {tiers.map((tier) => (
             <Card
