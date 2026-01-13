@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog"
 import { Mail } from "lucide-react"
 import Script from "next/script"
+import { cn } from "@/lib/utils"
 
 declare global {
   interface Window {
@@ -31,6 +32,17 @@ declare global {
       }
     }
   }
+}
+
+// Shared script loading state across all button instances
+let scriptLoadingState = {
+  isLoaded: typeof window !== "undefined" && typeof window.PaystackPop !== "undefined",
+  isLoading: false,
+  listeners: new Set<() => void>(),
+}
+
+function checkScriptLoaded() {
+  return typeof window !== "undefined" && typeof window.PaystackPop !== "undefined"
 }
 
 interface PaystackPaymentButtonProps {
@@ -52,7 +64,7 @@ export function PaystackPaymentButton({
   variant = "default",
   size = "default",
 }: PaystackPaymentButtonProps) {
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false)
+  const [isScriptLoaded, setIsScriptLoaded] = useState(checkScriptLoaded())
   const [isProcessing, setIsProcessing] = useState(false)
   const [showEmailDialog, setShowEmailDialog] = useState(false)
   const [emailInput, setEmailInput] = useState("")
@@ -60,18 +72,57 @@ export function PaystackPaymentButton({
   // Get public key from environment variable
   const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || ""
 
-  // Convert GHS to pesewas (Paystack uses smallest currency unit)
-  // 1 GHS = 100 pesewas
-  const amountInPesewas = Math.round(amount * 100)
+  // Validate amount
+  const isValidAmount = amount > 0 && !isNaN(amount) && isFinite(amount)
+
+  // Listen for script load updates and check periodically if already loaded
+  useEffect(() => {
+    const notifyLoaded = () => {
+      setIsScriptLoaded(true)
+    }
+    
+    // Check immediately if already loaded
+    if (scriptLoadingState.isLoaded || checkScriptLoaded()) {
+      setIsScriptLoaded(true)
+      scriptLoadingState.isLoaded = true
+    } else {
+      // Add listener for when script loads
+      scriptLoadingState.listeners.add(notifyLoaded)
+      
+      // Also check periodically in case script loads before our listener is set
+      const checkInterval = setInterval(() => {
+        if (checkScriptLoaded()) {
+          scriptLoadingState.isLoaded = true
+          setIsScriptLoaded(true)
+          scriptLoadingState.listeners.forEach((listener) => listener())
+          scriptLoadingState.listeners.clear()
+          clearInterval(checkInterval)
+        }
+      }, 100)
+      
+      return () => {
+        scriptLoadingState.listeners.delete(notifyLoaded)
+        clearInterval(checkInterval)
+      }
+    }
+  }, [])
 
   const handlePayment = () => {
-    if (!isScriptLoaded) {
+    // Check if Paystack is available (either from our state or globally)
+    const paystackAvailable = isScriptLoaded || checkScriptLoaded()
+    
+    if (!paystackAvailable) {
       console.error("Paystack script not loaded")
       return
     }
 
     if (!publicKey) {
-      alert("Payment gateway not configured. Please add NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY to your .env file.")
+      console.error("Payment gateway not configured. NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY is missing.")
+      return
+    }
+
+    if (!isValidAmount) {
+      console.error(`Invalid donation amount: ₵${amount}`)
       return
     }
 
@@ -86,39 +137,76 @@ export function PaystackPaymentButton({
   }
 
   const initiatePayment = (donorEmail: string) => {
+    if (!isValidAmount) {
+      console.error(`Invalid donation amount: ₵${amount}`)
+      setIsProcessing(false)
+      return
+    }
+
     setIsProcessing(true)
     setShowEmailDialog(false)
+
+    // Convert GHS to pesewas (Paystack uses smallest currency unit)
+    // 1 GHS = 100 pesewas - calculate fresh each time
+    const amountInPesewas = Math.round(amount * 100)
+
+    if (amountInPesewas < 100) {
+      console.error("Minimum donation amount is ₵1.00")
+      setIsProcessing(false)
+      return
+    }
 
     // Generate a unique reference
     const reference = `GKF_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`
 
-    const handler = window.PaystackPop.setup({
-      key: publicKey,
-      email: donorEmail,
-      amount: amountInPesewas,
-      currency: "GHS",
-      ref: reference,
-      metadata: {
-        custom_fields: [
-          {
-            display_name: "Donation Type",
-            variable_name: "donation_type",
-            value: description || "General Donation",
-          },
-        ],
-      },
-      callback: function (response: { reference: string }) {
-        // Payment successful - redirect to success page
-        setIsProcessing(false)
-        window.location.href = `/donate/success?ref=${response.reference}`
-      },
-      onClose: function () {
-        // User closed the payment modal
-        setIsProcessing(false)
-      },
-    })
+    try {
+      const handler = window.PaystackPop.setup({
+        key: publicKey,
+        email: donorEmail,
+        amount: amountInPesewas,
+        currency: "GHS",
+        ref: reference,
+        metadata: {
+          custom_fields: [
+            {
+              display_name: "Donation Type",
+              variable_name: "donation_type",
+              value: description || "General Donation",
+            },
+          ],
+        },
+        callback: function (response: { reference: string }) {
+          // Track donation initiation (client-side)
+          if (typeof window !== "undefined") {
+            // Track with analytics
+            import("@/lib/analytics").then(({ trackDonation }) => {
+              trackDonation({
+                amount: amount,
+                currency: "GHS",
+                donation_type: description || "General Donation",
+                reference: response.reference,
+                channel: "web",
+              })
+            }).catch(() => {
+              // Analytics not available, continue anyway
+            })
+          }
 
-    handler.openIframe()
+          // Payment successful - redirect to success page
+          setIsProcessing(false)
+          window.location.href = `/donate/success?ref=${response.reference}`
+        },
+        onClose: function () {
+          // User closed the payment modal
+          setIsProcessing(false)
+        },
+      })
+
+      handler.openIframe()
+    } catch (error) {
+      console.error("Payment initialization error:", error)
+      setIsProcessing(false)
+    }
   }
 
   const handleEmailSubmit = (e: React.FormEvent) => {
@@ -131,9 +219,16 @@ export function PaystackPaymentButton({
   return (
     <>
       <Script
+        id="paystack-inline-js"
         src="https://js.paystack.co/v1/inline.js"
         strategy="lazyOnload"
-        onLoad={() => setIsScriptLoaded(true)}
+        onLoad={() => {
+          scriptLoadingState.isLoaded = true
+          setIsScriptLoaded(true)
+          // Notify all listeners
+          scriptLoadingState.listeners.forEach((listener) => listener())
+          scriptLoadingState.listeners.clear()
+        }}
         onError={() => {
           console.error("Failed to load Paystack script")
           setIsScriptLoaded(false)
@@ -141,8 +236,11 @@ export function PaystackPaymentButton({
       />
       <Button
         onClick={handlePayment}
-        disabled={!isScriptLoaded || isProcessing}
-        className={className}
+        disabled={(!isScriptLoaded && !checkScriptLoaded()) || isProcessing}
+        className={cn(
+          className,
+          variant === "outline" && "dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary hover:!bg-primary hover:!text-primary-foreground hover:!border-primary"
+        )}
         variant={variant}
         size={size}
       >
@@ -200,5 +298,3 @@ export function PaystackPaymentButton({
     </>
   )
 }
-
-

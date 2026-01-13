@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { PaystackPaymentButton } from "./paystack-payment-button"
 import { Mail, CreditCard } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export function CustomAmountForm() {
   const [amount, setAmount] = useState("")
@@ -23,7 +24,10 @@ export function CustomAmountForm() {
               <Button
                 key={value}
                 variant="outline"
-                className="min-w-[100px] bg-transparent"
+                className={cn(
+                  "min-w-[100px] bg-transparent",
+                  "dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary hover:!bg-primary hover:!text-primary-foreground hover:!border-primary"
+                )}
                 onClick={() => {
                   setAmount(value.toString())
                   setShowForm(true)
@@ -118,4 +122,3 @@ export function CustomAmountForm() {
     </div>
   )
 }
-

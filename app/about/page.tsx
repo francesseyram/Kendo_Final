@@ -227,7 +227,6 @@ export default function AboutPage() {
                   ["Chief Instructor", "Russo Thierry Rusman De-Roch"],
                   ["Executive Member & Instructor", "Randolph Darku"],
                   ["Executive Member", "Wahab El Housseini"],
-                  ["Executive Member", "Tetteh Ocloo"],
                 ].map(([role, name]) => (
                   <div
                     key={name}
