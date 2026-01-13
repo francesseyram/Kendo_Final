@@ -1,3 +1,10 @@
 {
+  "/api/analytics/track/route": "app/api/analytics/track/route.js",
+  "/api/paystack/verify/route": "app/api/paystack/verify/route.js",
+  "/api/sponsorship/total/route": "app/api/sponsorship/total/route.js",
+  "/contact/page": "app/contact/page.js",
+  "/donate/page": "app/donate/page.js",
+  "/donate/success/page": "app/donate/success/page.js",
+  "/gallery/page": "app/gallery/page.js",
   "/shop/page": "app/shop/page.js"
 }

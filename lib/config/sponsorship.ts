@@ -11,7 +11,9 @@ export const TUNIS_SPONSORSHIP_CONFIG = {
   
   // Budget information (USD)
   totalBudget: 17500,
-  amountReceived: 100, // UPDATE THIS VALUE as donations come in
+  amountReceived: 100.18, // UPDATE THIS VALUE as donations come in (in USD)
+  // Note: When donations come in GHS, convert to USD using: USD = GHS / 11
+  // Updated: Added 2 GHS (₵2) = 0.18 USD
   
   // Team composition
   team: {
@@ -28,10 +30,11 @@ export const TUNIS_SPONSORSHIP_CONFIG = {
   
   // Currency conversion (update as needed)
   // Paystack in Ghana uses GHS, so USD amounts need conversion
-  usdToGhsRate: 15, // Update this rate as needed
+  usdToGhsRate: 11, // 1 USD = 11 GHS
   
-  // Preset donation amounts (USD)
-  presetAmounts: [50, 100, 250, 500, 1000],
+  // Preset donation amounts (GHS - Cedis)
+  // These are approximate USD equivalents: $50≈₵550, $100≈₵1,100, $250≈₵2,750, $500≈₵5,500, $1,000≈₵11,000
+  presetAmounts: [550, 1100, 2750, 5500, 11000],
 }
 
 /**
@@ -53,4 +56,26 @@ export function getProgressPercentage(): number {
  */
 export function convertUsdToGhs(usdAmount: number): number {
   return usdAmount * TUNIS_SPONSORSHIP_CONFIG.usdToGhsRate
+}
+
+/**
+ * Convert GHS to USD
+ */
+export function convertGhsToUsd(ghsAmount: number): number {
+  return ghsAmount / TUNIS_SPONSORSHIP_CONFIG.usdToGhsRate
+}
+
+/**
+ * Get total budget in GHS (Cedis)
+ */
+export function getTotalBudgetGhs(): number {
+  return convertUsdToGhs(TUNIS_SPONSORSHIP_CONFIG.totalBudget)
+}
+
+/**
+ * Get amount received in GHS (Cedis)
+ * Note: amountReceived is stored in USD, convert to GHS
+ */
+export function getAmountReceivedGhs(): number {
+  return convertUsdToGhs(TUNIS_SPONSORSHIP_CONFIG.amountReceived)
 }

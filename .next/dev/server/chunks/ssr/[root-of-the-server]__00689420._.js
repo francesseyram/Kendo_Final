@@ -747,7 +747,7 @@ const products = [
     {
         id: 6,
         name: "Kendo Tare",
-        image: "/shop/kendo-tare-waist-protection.jpg",
+        image: "/shop/kendo-tare-waist-protection.jpeg",
         description: "Waist and hip protector that guards the lower body and displays the kendoka’s name and dojo affiliation"
     },
     {
@@ -759,7 +759,7 @@ const products = [
     {
         id: 8,
         name: "Complete Bogu Set",
-        image: "/shop/kendo-bogu-complete-set.jpg",
+        image: "/shop/kendo-bogu-complete-set.jpeg",
         description: "Full protective armor set including men, kote, dō, and tare for safe and proper Kendo practice"
     },
     {
@@ -826,7 +826,7 @@ function ShopPage() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-muted-foreground leading-relaxed text-pretty max-w-3xl mx-auto",
-                                    children: "Authentic Kendo equipment curated by the Ghana Kendo Federation. All items are available upon request to ensure proper sizing, quality, and suitability for your level of practice."
+                                    children: "We partner with trusted suppliers outside Ghana to provide authentic Kendo equipment. All items are shipped internationally and will be available approximately two weeks after payment is made."
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
                                     lineNumber: 95,
@@ -858,7 +858,7 @@ function ShopPage() {
                                 className: "overflow-hidden hover:shadow-xl transition-all duration-300 group",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "aspect-square relative bg-muted",
+                                        className: "aspect-[4/5] relative bg-muted",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                 src: product.image || "/placeholder.svg",
@@ -867,7 +867,7 @@ function ShopPage() {
                                                 className: "object-cover group-hover:scale-105 transition-transform duration-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 111,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -875,13 +875,13 @@ function ShopPage() {
                                                 children: "Available on request"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 119,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 110,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -892,7 +892,7 @@ function ShopPage() {
                                                 children: product.name
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 125,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -900,7 +900,7 @@ function ShopPage() {
                                                 children: product.description
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 126,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -914,36 +914,36 @@ function ShopPage() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                            lineNumber: 142,
+                                                            lineNumber: 140,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Request this item"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 135,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 130,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, product.id, true, {
                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                lineNumber: 108,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                        lineNumber: 106,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -956,7 +956,7 @@ function ShopPage() {
                                     children: "How Equipment Requests Work"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 152,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -964,7 +964,7 @@ function ShopPage() {
                                     children: "To maintain quality and ensure proper fit, all equipment is supplied through direct request. Send us an email indicating the item you’re interested in, your experience level, and any sizing details if applicable."
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                    lineNumber: 157,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -975,34 +975,34 @@ function ShopPage() {
                                         children: "Contact info@kendoghana.com"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 162,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                                    lineNumber: 163,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                            lineNumber: 153,
+                            lineNumber: 151,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                        lineNumber: 152,
+                        lineNumber: 150,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                lineNumber: 104,
+                lineNumber: 102,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/shop/page.tsx",
-                lineNumber: 172,
+                lineNumber: 170,
                 columnNumber: 7
             }, this)
         ]

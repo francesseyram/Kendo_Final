@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { PaystackPaymentButton } from "./paystack-payment-button"
 import { Mail, CreditCard, X } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
-import { TUNIS_SPONSORSHIP_CONFIG, convertUsdToGhs } from "@/lib/config/sponsorship"
+import { TUNIS_SPONSORSHIP_CONFIG, convertGhsToUsd } from "@/lib/config/sponsorship"
 
 interface TunisSponsorshipFormProps {
   presetAmount: number | null
@@ -19,9 +19,9 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
   const [email, setEmail] = useState("")
   const [anonymous, setAnonymous] = useState(false)
 
-  // Convert USD to GHS for Paystack (Ghana uses GHS)
-  const parsedAmountUSD = parseFloat(amount)
-  const parsedAmountGHS = convertUsdToGhs(parsedAmountUSD)
+  // Amount is in GHS (Cedis) - convert to USD for display/reporting
+  const parsedAmountGHS = parseFloat(amount)
+  const parsedAmountUSD = convertGhsToUsd(parsedAmountGHS)
 
   return (
     <div className="rounded-xl border border-border/60 bg-background/60 backdrop-blur-sm p-6 sm:p-8 space-y-6 glass">
@@ -61,10 +61,10 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
 
         <div className="space-y-2">
           <Label htmlFor="sponsor-amount">
-            Sponsorship Amount (USD)
-            {parsedAmountUSD > 0 && (
+            Sponsorship Amount (Cedis)
+            {parsedAmountGHS > 0 && (
               <span className="ml-2 text-xs text-muted-foreground">
-                ≈ ₵{parsedAmountGHS.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                ≈ ${parsedAmountUSD.toLocaleString(undefined, { maximumFractionDigits: 2 })}
               </span>
             )}
           </Label>
@@ -75,7 +75,7 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
               type="number"
               min="1"
               step="0.01"
-              placeholder="Enter amount in USD"
+              placeholder="Enter amount in Cedis (₵)"
               className="pl-10"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
@@ -83,7 +83,7 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
             />
           </div>
           <p className="text-xs text-muted-foreground">
-            Amount will be converted to GHS (₵) for payment processing
+            Payment will be processed in Ghana Cedis (₵)
           </p>
         </div>
 
@@ -102,11 +102,11 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
         </div>
       </div>
 
-      {parsedAmountUSD > 0 && email && (
+      {parsedAmountGHS > 0 && email && (
         <PaystackPaymentButton
           amount={parsedAmountGHS}
           email={email}
-          label={`Sponsor $${parsedAmountUSD.toLocaleString()}`}
+          label={`Sponsor ₵${parsedAmountGHS.toLocaleString()}`}
           description="2nd Tunis International Open Sponsorship"
           size="lg"
           className="w-full bg-primary hover:bg-primary/90"
@@ -118,8 +118,8 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
             year: 2026,
             event_location: "Tunisia",
             event_dates: "28th – 29th November 2026",
-            amount_usd: parsedAmountUSD,
             amount_ghs: parsedAmountGHS,
+            amount_usd: parsedAmountUSD, // For reference/reporting
           }}
         />
       )}

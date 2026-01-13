@@ -145,6 +145,14 @@ async function handleSuccessfulPayment(data: any, eventId: string) {
       return
     }
 
+    // Check if this is a sponsorship donation
+    const donationType = transaction.metadata?.donation_type || 
+                        transaction.metadata?.custom_fields?.find(
+                          (f: any) => f.variable_name === "donation_type"
+                        )?.value
+    const isSponsorship = donationType === "SPONSORSHIP" || 
+                         transaction.metadata?.campaign === "2nd Tunis International Open Championships"
+
     // Save transaction to database (idempotent - upsert by reference)
     const { saveDonation } = await import("@/lib/db/transactions")
     await saveDonation({
@@ -162,6 +170,32 @@ async function handleSuccessfulPayment(data: any, eventId: string) {
       gateway_response: transaction.gateway_response,
     })
 
+    // Update sponsorship total if this is a sponsorship donation
+    if (isSponsorship) {
+      try {
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.APP_BASE_URL || "http://localhost:3000"
+        const response = await fetch(`${baseUrl}/api/sponsorship/total`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            amountGHS: transaction.amount,
+          }),
+        })
+
+        if (response.ok) {
+          const result = await response.json()
+          console.log("[WEBHOOK] Sponsorship total updated:", result)
+        } else {
+          console.error("[WEBHOOK] Failed to update sponsorship total")
+        }
+      } catch (updateError) {
+        // Don't fail webhook if sponsorship update fails
+        console.error("[WEBHOOK] Error updating sponsorship total:", updateError)
+      }
+    }
+
     // Also log for monitoring
     await logTransaction({
       ...transaction,
@@ -178,9 +212,7 @@ async function handleSuccessfulPayment(data: any, eventId: string) {
           amount: transaction.amount,
           currency: transaction.currency,
           reference: transaction.reference,
-          donation_type: transaction.metadata?.custom_fields?.find(
-            (f: any) => f.variable_name === "donation_type"
-          )?.value || "General Donation",
+          donation_type: donationType || "General Donation",
           paid_at: transaction.paid_at,
           donor_name: transaction.metadata?.custom_fields?.find(
             (f: any) => f.variable_name === "donor_name"
@@ -198,9 +230,7 @@ async function handleSuccessfulPayment(data: any, eventId: string) {
       event: "donation_completed",
       amount: transaction.amount,
       currency: transaction.currency,
-      donation_type: transaction.metadata?.custom_fields?.find(
-        (f: any) => f.variable_name === "donation_type"
-      )?.value || "General Donation",
+      donation_type: donationType || "General Donation",
       channel: transaction.channel,
       reference: transaction.reference,
       timestamp: new Date().toISOString(),

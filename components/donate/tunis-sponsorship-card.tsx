@@ -1,22 +1,76 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { PaystackPaymentButton } from "./paystack-payment-button"
 import { TunisSponsorshipForm } from "./tunis-sponsorship-form"
 import { Trophy, Users, Calendar, MapPin, Target, TrendingUp } from "lucide-react"
 import { Progress } from "@/components/ui/progress"
-import { TUNIS_SPONSORSHIP_CONFIG, getOutstandingAmount, getProgressPercentage } from "@/lib/config/sponsorship"
+import { 
+  TUNIS_SPONSORSHIP_CONFIG, 
+  getOutstandingAmount, 
+  getProgressPercentage,
+  getTotalBudgetGhs,
+  convertUsdToGhs,
+  convertGhsToUsd
+} from "@/lib/config/sponsorship"
 
 export function TunisSponsorshipCard() {
   const [showForm, setShowForm] = useState(false)
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null)
+  const [amountReceivedUSD, setAmountReceivedUSD] = useState(TUNIS_SPONSORSHIP_CONFIG.amountReceived)
+  const [isLoading, setIsLoading] = useState(true)
 
-  const totalBudget = TUNIS_SPONSORSHIP_CONFIG.totalBudget
-  const amountReceived = TUNIS_SPONSORSHIP_CONFIG.amountReceived
-  const outstanding = getOutstandingAmount()
-  const progress = getProgressPercentage()
+  // Fetch current sponsorship total
+  useEffect(() => {
+    const fetchTotal = async () => {
+      try {
+        const response = await fetch("/api/sponsorship/total")
+        if (response.ok) {
+          const data = await response.json()
+          if (data.success) {
+            setAmountReceivedUSD(data.amountReceived.usd)
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch sponsorship total:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchTotal()
+
+    // Poll for updates every 5 seconds (in case of webhook updates)
+    const interval = setInterval(fetchTotal, 5000)
+
+    // Listen for custom event to refresh immediately after donation
+    const handleDonationSuccess = () => {
+      fetchTotal()
+    }
+    window.addEventListener("donation-success", handleDonationSuccess)
+
+    // Check if we're returning from a successful donation
+    const urlParams = new URLSearchParams(window.location.search)
+    if (urlParams.get("donation_success") === "true") {
+      fetchTotal()
+      // Clean up URL
+      window.history.replaceState({}, "", window.location.pathname)
+    }
+
+    return () => {
+      clearInterval(interval)
+      window.removeEventListener("donation-success", handleDonationSuccess)
+    }
+  }, [])
+
+  const totalBudgetUSD = TUNIS_SPONSORSHIP_CONFIG.totalBudget
+  const totalBudgetGHS = getTotalBudgetGhs()
+  const amountReceivedGHS = convertUsdToGhs(amountReceivedUSD)
+  const outstandingUSD = totalBudgetUSD - amountReceivedUSD
+  const outstandingGHS = convertUsdToGhs(outstandingUSD)
+  const progress = (amountReceivedUSD / totalBudgetUSD) * 100
 
   const airTicketTotal = TUNIS_SPONSORSHIP_CONFIG.budget.airTicket * TUNIS_SPONSORSHIP_CONFIG.team.total
   const hotelMealsTotal = TUNIS_SPONSORSHIP_CONFIG.budget.hotelMeals * TUNIS_SPONSORSHIP_CONFIG.team.total
@@ -104,34 +158,98 @@ export function TunisSponsorshipCard() {
             </div>
             <div className="border-t border-border/60 pt-2 mt-2 flex justify-between font-semibold">
               <span>Total Budget Required</span>
-              <span className="text-primary">${totalBudget.toLocaleString()}</span>
+              <div className="text-right">
+                <div className="text-primary">₵{totalBudgetGHS.toLocaleString()}</div>
+                <div className="text-xs text-muted-foreground font-normal">(${totalBudgetUSD.toLocaleString()})</div>
+              </div>
             </div>
             <div className="flex justify-between text-xs text-muted-foreground">
               <span>Amount Already Received</span>
-              <span>${amountReceived.toLocaleString()}</span>
+              <div className="text-right">
+                <span>₵{amountReceivedGHS.toLocaleString()}</span>
+                <span className="ml-1">(${amountReceivedUSD.toLocaleString()})</span>
+              </div>
             </div>
             <div className="flex justify-between font-bold text-lg border-t border-border/60 pt-2 mt-2">
               <span>Outstanding Target</span>
-              <span className="text-primary">${outstanding.toLocaleString()}</span>
+              <div className="text-right">
+                <span className="text-primary">₵{outstandingGHS.toLocaleString()}</span>
+                <div className="text-xs text-muted-foreground font-normal">(${outstandingUSD.toLocaleString()})</div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-2">
+        <div className="mb-6 p-6 rounded-xl bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5 border border-primary/20">
+          <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Progress</span>
+              <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <TrendingUp className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground">Funding Progress</h3>
+                <p className="text-xs text-muted-foreground">Help us reach our goal</p>
+              </div>
             </div>
-            <span className="text-sm font-semibold text-primary">
-              ${amountReceived.toLocaleString()} / ${totalBudget.toLocaleString()}
-            </span>
+            <div className="text-right">
+              <div className="text-2xl font-bold text-primary">
+                {progress.toFixed(1)}%
+              </div>
+              <div className="text-xs text-muted-foreground">funded</div>
+            </div>
           </div>
-          <Progress value={progress} className="h-2" />
-          <p className="text-xs text-muted-foreground mt-1 text-right">
-            {progress.toFixed(1)}% funded
-          </p>
+          
+          {/* Enhanced Progress Bar */}
+          <div className="relative mb-4">
+            <div className="h-6 w-full rounded-full bg-primary/10 border border-primary/20 overflow-hidden shadow-inner">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-primary via-primary to-primary/90 transition-all duration-1000 ease-out relative overflow-hidden"
+                style={{ width: `${Math.min(progress, 100)}%` }}
+              >
+                {/* Animated shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+              </div>
+            </div>
+            {/* Progress markers */}
+            <div className="absolute top-0 left-0 right-0 h-6 flex items-center pointer-events-none">
+              {[25, 50, 75, 100].map((marker) => (
+                <div
+                  key={marker}
+                  className="absolute h-full w-0.5 bg-background/40"
+                  style={{ left: `${marker}%`, transform: 'translateX(-50%)' }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Amount Display */}
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-primary/20">
+            <div>
+              <p className="text-xs text-muted-foreground mb-1">Raised</p>
+              {isLoading ? (
+                <div className="h-6 w-24 bg-muted animate-pulse rounded" />
+              ) : (
+                <>
+                  <p className="text-lg font-bold text-foreground">
+                    ₵{amountReceivedGHS.toLocaleString()}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    ${amountReceivedUSD.toLocaleString()} USD
+                  </p>
+                </>
+              )}
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-muted-foreground mb-1">Goal</p>
+              <p className="text-lg font-bold text-primary">
+                ₵{totalBudgetGHS.toLocaleString()}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                ${totalBudgetUSD.toLocaleString()} USD
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Donation Options */}
@@ -139,7 +257,7 @@ export function TunisSponsorshipCard() {
           <div className="space-y-4">
             <div>
               <p className="text-sm font-medium mb-3 text-center text-foreground">
-                Choose a sponsorship amount (USD)
+                Choose a sponsorship amount (Cedis)
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {presetAmounts.map((amount) => (
@@ -152,7 +270,7 @@ export function TunisSponsorshipCard() {
                       setShowForm(true)
                     }}
                   >
-                    ${amount}
+                    ₵{amount.toLocaleString()}
                   </Button>
                 ))}
                 <Button

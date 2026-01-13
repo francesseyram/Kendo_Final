@@ -9,6 +9,7 @@ interface DonationEvent {
   reference: string
   channel?: string
   email?: string
+  campaign?: string
 }
 
 interface PageViewEvent {
