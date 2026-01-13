@@ -139,28 +139,34 @@ const regularEvents = events.filter((event) => !event.featured)
 const featuredEvent = events.find((event) => event.featured)
 
 const newsLinks = [
-  { 
+  {
     id: 1,
+    title: "Tunisia International Kendo Open Nov 2025",
+    url: "https://www.facebook.com/reel/1408241467431190"
+
+  }, 
+  { 
+    id: 2,
     title: "The National Seniors Kendo Challenge!! Excerpts of Strength and Honour", 
     url: "https://web.facebook.com/61571301195088/videos/1337358874447072/?rdid=cPLUWiLL4rcazUso#"
   },
   {
-    id: 2,
+    id: 3,
     title: "Ghana Kendo Federation Announces National Team Selection",
     url: "https://obusports.org/2025/07/12/ghana-kendo-federation-announces-national-team-selection/",
   },
   {
-    id: 3,
+    id: 4,
     title: "1st National Inter-Club Kendo Championships",
     url: "https://youtu.be/ArRtLgqO7VY?si=KADfwEp0F9UudfJI",
   },
   {
-    id: 4,
+    id: 5,
     title: "Japanese Ambassador Kendo Championship Hosts 5th Edition",
     url: "https://obusports.org/2025/03/16/japanese-ambassador-kendo-championship-hosts-5th-edition/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Ghana Kendo Federation Hosts Referees Seminar to Enhance Officiating",
     url: "https://obusports.org/2025/04/07/ghana-kendo-association-hosts-referees-seminar-to-enhance-officiating/",
   },
@@ -285,12 +291,12 @@ export default function NewsPage() {
 
           {/* Sidebar - Press Coverage */}
           <div className="lg:col-span-1 order-first lg:order-last">
-            <Card className="p-4 sm:p-6 sticky top-20 sm:top-24">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <Card className="p-3 sm:p-4 md:p-6 sticky top-20 sm:top-24">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
                 <div className="h-8 w-8 sm:h-10 sm:w-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Newspaper className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
-                <h2 className="text-xl sm:text-2xl font-bold">Press Coverage</h2>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold">Press Coverage</h2>
               </div>
 
               <div className="space-y-2 sm:space-y-3">
@@ -308,21 +314,21 @@ export default function NewsPage() {
                       
                       <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                       
-                      <div className="absolute top-2 right-2 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="absolute top-2 right-2 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary/10 flex items-center justify-center text-[10px] sm:text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                         {index + 1}
                       </div>
 
-                      <div className="flex items-start gap-3 relative z-10">
+                      <div className="flex items-start gap-2 sm:gap-3 relative z-10">
                         <div className="flex-shrink-0 mt-0.5">
-                          <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                            <ExternalLink className="h-4 w-4 text-primary" />
+                          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                            <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary" />
                           </div>
                         </div>
-                        <div className="flex-1 min-w-0 pr-4 sm:pr-6">
+                        <div className="flex-1 min-w-0 pr-2 sm:pr-4">
                           <span className="text-xs text-muted-foreground block mb-1">
                             External Media
                           </span>
-                          <p className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-all duration-300 leading-relaxed group-hover:translate-x-1 line-clamp-2">
+                          <p className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-all duration-300 leading-relaxed group-hover:translate-x-1 break-words">
                             {news.title}
                           </p>
                         </div>

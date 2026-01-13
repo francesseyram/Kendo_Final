@@ -100,7 +100,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors" />
               <div className="relative flex flex-col items-center sm:items-start">
                 <div className="flex items-baseline gap-2 mb-3 justify-center sm:justify-start">
-                  <div className="text-5xl md:text-6xl font-bold text-gradient">200</div>
+                  <div className="text-5xl md:text-6xl font-bold text-gradient">100</div>
                   <div className="text-3xl font-bold text-primary/40">+</div>
                 </div>
                 <div className="text-sm text-muted-foreground font-medium">Active Members</div>

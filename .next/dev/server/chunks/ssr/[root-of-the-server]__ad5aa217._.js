@@ -788,26 +788,31 @@ const featuredEvent = events.find((event)=>event.featured);
 const newsLinks = [
     {
         id: 1,
+        title: "Tunisia International Kendo Open Nov 2025",
+        url: "https://www.facebook.com/reel/1408241467431190"
+    },
+    {
+        id: 2,
         title: "The National Seniors Kendo Challenge!! Excerpts of Strength and Honour",
         url: "https://web.facebook.com/61571301195088/videos/1337358874447072/?rdid=cPLUWiLL4rcazUso#"
     },
     {
-        id: 2,
+        id: 3,
         title: "Ghana Kendo Federation Announces National Team Selection",
         url: "https://obusports.org/2025/07/12/ghana-kendo-federation-announces-national-team-selection/"
     },
     {
-        id: 3,
+        id: 4,
         title: "1st National Inter-Club Kendo Championships",
         url: "https://youtu.be/ArRtLgqO7VY?si=KADfwEp0F9UudfJI"
     },
     {
-        id: 4,
+        id: 5,
         title: "Japanese Ambassador Kendo Championship Hosts 5th Edition",
         url: "https://obusports.org/2025/03/16/japanese-ambassador-kendo-championship-hosts-5th-edition/"
     },
     {
-        id: 5,
+        id: 6,
         title: "Ghana Kendo Federation Hosts Referees Seminar to Enhance Officiating",
         url: "https://obusports.org/2025/04/07/ghana-kendo-association-hosts-referees-seminar-to-enhance-officiating/"
     }
@@ -822,7 +827,7 @@ function NewsPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$navigation$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                lineNumber: 177,
+                lineNumber: 183,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -836,7 +841,7 @@ function NewsPage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                        lineNumber: 182,
+                        lineNumber: 188,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -851,12 +856,12 @@ function NewsPage() {
                                         children: "Events"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                        lineNumber: 193,
+                                        lineNumber: 199,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 198,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -864,7 +869,7 @@ function NewsPage() {
                                     children: "Events"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                    lineNumber: 195,
+                                    lineNumber: 201,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -872,24 +877,24 @@ function NewsPage() {
                                     children: "Stay updated with the latest news, upcoming events, and competitions from the Ghana Kendo Federation."
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                    lineNumber: 198,
+                                    lineNumber: 204,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                            lineNumber: 191,
+                            lineNumber: 197,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                        lineNumber: 190,
+                        lineNumber: 196,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                lineNumber: 180,
+                lineNumber: 186,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -915,7 +920,7 @@ function NewsPage() {
                                                     className: "h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 218,
+                                                    lineNumber: 224,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -923,13 +928,13 @@ function NewsPage() {
                                                     children: getStatusLabel(featuredEvent.status)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 225,
+                                                    lineNumber: 231,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                            lineNumber: 217,
+                                            lineNumber: 223,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -940,7 +945,7 @@ function NewsPage() {
                                                     children: "Featured Event"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 230,
+                                                    lineNumber: 236,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -948,7 +953,7 @@ function NewsPage() {
                                                     children: featuredEvent.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 233,
+                                                    lineNumber: 239,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -956,7 +961,7 @@ function NewsPage() {
                                                     children: "A historic milestone marking Ghana's first nationwide Kendo championship, bringing together clubs, referees, and national selectors."
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 236,
+                                                    lineNumber: 242,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -966,26 +971,26 @@ function NewsPage() {
                                                             className: "h-3 w-3 sm:h-4 sm:w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 241,
+                                                            lineNumber: 247,
                                                             columnNumber: 21
                                                         }, this),
                                                         featuredEvent.date
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 240,
+                                                    lineNumber: 246,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 235,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 219,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1007,7 +1012,7 @@ function NewsPage() {
                                                             sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 258,
+                                                            lineNumber: 264,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1015,13 +1020,13 @@ function NewsPage() {
                                                             children: getStatusLabel(event.status)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 267,
+                                                            lineNumber: 273,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 257,
+                                                    lineNumber: 263,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1033,7 +1038,7 @@ function NewsPage() {
                                                                 className: "h-3 w-3 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                lineNumber: 277,
+                                                                lineNumber: 283,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1041,44 +1046,44 @@ function NewsPage() {
                                                                 children: event.date
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                lineNumber: 278,
+                                                                lineNumber: 284,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                        lineNumber: 276,
+                                                        lineNumber: 282,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 275,
+                                                    lineNumber: 281,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, event.id, true, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                            lineNumber: 251,
+                                            lineNumber: 257,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                    lineNumber: 249,
+                                    lineNumber: 255,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                            lineNumber: 210,
+                            lineNumber: 216,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "lg:col-span-1 order-first lg:order-last",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Card"], {
-                                className: "p-4 sm:p-6 sticky top-20 sm:top-24",
+                                className: "p-3 sm:p-4 md:p-6 sticky top-20 sm:top-24",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6",
+                                        className: "flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-8 w-8 sm:h-10 sm:w-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0",
@@ -1086,26 +1091,26 @@ function NewsPage() {
                                                     className: "h-4 w-4 sm:h-5 sm:w-5 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 291,
+                                                    lineNumber: 297,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                lineNumber: 290,
+                                                lineNumber: 296,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-xl sm:text-2xl font-bold",
+                                                className: "text-lg sm:text-xl md:text-2xl font-bold",
                                                 children: "Press Coverage"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                lineNumber: 293,
+                                                lineNumber: 299,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                        lineNumber: 289,
+                                        lineNumber: 295,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1124,133 +1129,133 @@ function NewsPage() {
                                                             className: "absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 309,
+                                                            lineNumber: 315,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute top-2 right-2 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity",
+                                                            className: "absolute top-2 right-2 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary/10 flex items-center justify-center text-[10px] sm:text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity",
                                                             children: index + 1
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 311,
+                                                            lineNumber: 317,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-start gap-3 relative z-10",
+                                                            className: "flex items-start gap-2 sm:gap-3 relative z-10",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "flex-shrink-0 mt-0.5",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "h-9 w-9 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3",
+                                                                        className: "h-8 w-8 sm:h-9 sm:w-9 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3",
                                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
-                                                                            className: "h-4 w-4 text-primary"
+                                                                            className: "h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                            lineNumber: 318,
+                                                                            lineNumber: 324,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                        lineNumber: 317,
+                                                                        lineNumber: 323,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                    lineNumber: 316,
+                                                                    lineNumber: 322,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex-1 min-w-0 pr-4 sm:pr-6",
+                                                                    className: "flex-1 min-w-0 pr-2 sm:pr-4",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             className: "text-xs text-muted-foreground block mb-1",
                                                                             children: "External Media"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                            lineNumber: 322,
+                                                                            lineNumber: 328,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                            className: "text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-all duration-300 leading-relaxed group-hover:translate-x-1 line-clamp-2",
+                                                                            className: "text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-all duration-300 leading-relaxed group-hover:translate-x-1 break-words",
                                                                             children: news.title
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                            lineNumber: 325,
+                                                                            lineNumber: 331,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                                    lineNumber: 321,
+                                                                    lineNumber: 327,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 315,
+                                                            lineNumber: 321,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary/80 to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 331,
+                                                            lineNumber: 337,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute top-0 right-0 w-12 h-12 bg-primary/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                            lineNumber: 333,
+                                                            lineNumber: 339,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                    lineNumber: 307,
+                                                    lineNumber: 313,
                                                     columnNumber: 21
                                                 }, this)
                                             }, news.id, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                                lineNumber: 298,
+                                                lineNumber: 304,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                        lineNumber: 296,
+                                        lineNumber: 302,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                                lineNumber: 288,
+                                lineNumber: 294,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                            lineNumber: 287,
+                            lineNumber: 293,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                    lineNumber: 207,
+                    lineNumber: 213,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                lineNumber: 206,
+                lineNumber: 212,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-                lineNumber: 343,
+                lineNumber: 349,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/Code/Kendo_Final/app/news/page.tsx",
-        lineNumber: 176,
+        lineNumber: 182,
         columnNumber: 5
     }, this);
 }
