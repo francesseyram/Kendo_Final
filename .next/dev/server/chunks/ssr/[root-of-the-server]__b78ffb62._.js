@@ -551,11 +551,11 @@ function AboutPage() {
                         className: "relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 opacity-[0.04]",
+                                className: "absolute inset-0 opacity-[0.03]",
                                 style: {
-                                    backgroundImage: `linear-gradient(rgba(239,68,68,0.15) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(239,68,68,0.15) 1px, transparent 1px)`,
-                                    backgroundSize: "48px 48px"
+                                    backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px),
+                               linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px)`,
+                                    backgroundSize: "50px 50px"
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/about/page.tsx",
@@ -615,7 +615,7 @@ function AboutPage() {
                                 className: "relative mb-12 sm:mb-16 md:mb-20",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        src: "/gallery_images/1st_national_inter_kendo/newpic3.jpeg",
+                                        src: "/gallery_images/saturday_training/practice_14.jpg",
                                         alt: "Kendo training in Ghana",
                                         width: 1200,
                                         height: 600,

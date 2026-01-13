@@ -17,11 +17,11 @@ export default function AboutPage() {
         <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden">
           {/* Subtle grid background */}
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.03]"
             style={{
-              backgroundImage: `linear-gradient(rgba(239,68,68,0.15) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(239,68,68,0.15) 1px, transparent 1px)`,
-              backgroundSize: "48px 48px",
+              backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px),
+                               linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px)`,
+              backgroundSize: "50px 50px",
             }}
           />
 
@@ -57,6 +57,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             <p className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-xs sm:text-sm text-white/80 max-w-xs sm:max-w-md">
+              Discipline. Respect. Continuous self-improvement.
             </p>
           </div>
 
@@ -227,6 +228,7 @@ export default function AboutPage() {
                   ["Chief Instructor", "Russo Thierry Rusman De-Roch"],
                   ["Executive Member & Instructor", "Randolph Darku"],
                   ["Executive Member", "Wahab El Housseini"],
+                  ["Executive Member", "Tetteh Ocloo"],
                 ].map(([role, name]) => (
                   <div
                     key={name}

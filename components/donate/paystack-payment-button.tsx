@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog"
 import { Mail } from "lucide-react"
 import Script from "next/script"
+import { cn } from "@/lib/utils"
 
 declare global {
   interface Window {
@@ -112,17 +113,16 @@ export function PaystackPaymentButton({
     
     if (!paystackAvailable) {
       console.error("Paystack script not loaded")
-      alert("Payment system is loading. Please wait a moment and try again.")
       return
     }
 
     if (!publicKey) {
-      alert("Payment gateway not configured. Please add NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY to your .env file.")
+      // Fail silently - no alert or error message to user
       return
     }
 
     if (!isValidAmount) {
-      alert(`Invalid donation amount: ₵${amount}. Please contact support if this error persists.`)
+      console.error(`Invalid donation amount: ₵${amount}`)
       return
     }
 
@@ -138,7 +138,7 @@ export function PaystackPaymentButton({
 
   const initiatePayment = (donorEmail: string) => {
     if (!isValidAmount) {
-      alert(`Invalid donation amount: ₵${amount}. Please try again.`)
+      console.error(`Invalid donation amount: ₵${amount}`)
       setIsProcessing(false)
       return
     }
@@ -151,7 +151,7 @@ export function PaystackPaymentButton({
     const amountInPesewas = Math.round(amount * 100)
 
     if (amountInPesewas < 100) {
-      alert("Minimum donation amount is ₵1.00")
+      console.error("Minimum donation amount is ₵1.00")
       setIsProcessing(false)
       return
     }
@@ -205,7 +205,6 @@ export function PaystackPaymentButton({
       handler.openIframe()
     } catch (error) {
       console.error("Payment initialization error:", error)
-      alert("An error occurred while initiating payment. Please try again.")
       setIsProcessing(false)
     }
   }
@@ -237,8 +236,11 @@ export function PaystackPaymentButton({
       />
       <Button
         onClick={handlePayment}
-        disabled={(!isScriptLoaded && !checkScriptLoaded()) || isProcessing}
-        className={className}
+        disabled={(!isScriptLoaded && !checkScriptLoaded()) || isProcessing || !publicKey}
+        className={cn(
+          className,
+          variant === "outline" && "hover:!bg-primary hover:!text-primary-foreground hover:!border-primary dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary"
+        )}
         variant={variant}
         size={size}
       >

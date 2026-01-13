@@ -23,10 +23,6 @@ export default function GalleryPage() {
         alt: "Tunis International Open - Image 7",
       },
       {
-        src: "/gallery_images/tunisia/kendo_8.jpeg",
-        alt: "Tunis International Open - Image 8",
-      },
-      {
         src: "/gallery_images/tunisia/kendo_9.jpeg",
         alt: "Tunis International Open - Image 9",
       },
@@ -43,16 +39,24 @@ export default function GalleryPage() {
         alt: "Tunis International Open - Image 12",
       },
       {
-        src: "/gallery_images/tunisia/kendo_13.jpeg",
-        alt: "Tunis International Open - Image 13",
-      },
-      {
         src: "/gallery_images/tunisia/kendo_14.jpeg",
         alt: "Tunis International Open - Image 14",
       },
       {
         src: "/gallery_images/tunisia/kendo_15.jpeg",
         alt: "Tunis International Open - Image 15",
+      },
+      {
+        src: "/gallery_images/tunisia/kendo_16.jpeg",
+        alt: "Tunis International Open - Image 16",
+      },
+      {
+        src: "/gallery_images/tunisia/kendo_18.jpeg",
+        alt: "Tunis International Open - Image 18",
+      },
+      {
+        src: "/gallery_images/tunisia/kendo_19.jpeg",
+        alt: "Tunis International Open - Image 19",
       },
     ],
   },
@@ -72,17 +76,45 @@ export default function GalleryPage() {
           alt: "Saturday Training Session - Practice 3",
         },
         {
-          src: "/gallery_images/saturday_training/practice_4.jpeg",
-          alt: "Saturday Training Session - Practice 4",
-        },
-        {
-          src: "/gallery_images/saturday_training/practice_5.jpeg",
-          alt: "Saturday Training Session - Practice 5",
-        },
-        {
           src: "/gallery_images/saturday_training/practice_6.jpeg",
           alt: "Saturday Training Session - Practice 6",
         },
+        {
+          src: "/gallery_images/saturday_training/practice_7.jpeg",
+          alt: "Saturday Training Session - Practice 7",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_8.jpeg",
+          alt: "Saturday Training Session - Practice 8",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_9.jpg",
+          alt: "Saturday Training Session - Practice 9",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_10.jpg",
+          alt: "Saturday Training Session - Practice 10",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_11.jpg",
+          alt: "Saturday Training Session - Practice 11",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_12.jpg",
+          alt: "Saturday Training Session - Practice 12",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_13.jpg",
+          alt: "Saturday Training Session - Practice 13",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_14.jpg",
+          alt: "Saturday Training Session - Practice 14",
+        },
+        {
+          src: "/gallery_images/saturday_training/practice_15.jpg",
+          alt: "Saturday Training Session - Practice 15",
+        }, 
       ],
     },
     {
@@ -269,7 +301,7 @@ export default function GalleryPage() {
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
-              backgroundImage: `linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)`,
+              backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px)`,
               backgroundSize: "50px 50px",
             }}
           />

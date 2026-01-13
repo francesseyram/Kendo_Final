@@ -28,7 +28,7 @@ export default function Home() {
         />
 
         {/* Grid overlay - hidden on mobile for cleaner experience */}
-        <div className="hidden md:block absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="hidden md:block absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.03) 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 text-center pt-16 sm:pt-20">
           <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8" data-aos="fade-up" data-aos-easing="ease-out-cubic">
@@ -65,7 +65,7 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="rounded-full px-8 h-14 text-base hover:bg-primary/10 hover:border-primary transition-all hover:scale-105 bg-transparent border-primary/30"
+                className="rounded-full px-8 h-14 text-base hover:!bg-primary hover:!text-primary-foreground hover:!border-primary transition-all hover:scale-105 bg-transparent border-primary/30"
               >
                 <Link href="/about">Learn More</Link>
               </Button>
@@ -283,7 +283,7 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="rounded-full px-8 h-14 text-base border-primary/30 hover:bg-primary/10 hover:border-primary transition-all hover:scale-105 bg-transparent"
+                className="rounded-full px-8 h-14 text-base border-primary/30 hover:!bg-primary hover:!text-primary-foreground hover:!border-primary transition-all hover:scale-105 bg-transparent"
               >
                 <Link href="/contact">Get in Touch</Link>
               </Button>

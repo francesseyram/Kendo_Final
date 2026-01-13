@@ -587,10 +587,6 @@ function GalleryPage() {
                     alt: "Tunis International Open - Image 7"
                 },
                 {
-                    src: "/gallery_images/tunisia/kendo_8.jpeg",
-                    alt: "Tunis International Open - Image 8"
-                },
-                {
                     src: "/gallery_images/tunisia/kendo_9.jpeg",
                     alt: "Tunis International Open - Image 9"
                 },
@@ -607,16 +603,24 @@ function GalleryPage() {
                     alt: "Tunis International Open - Image 12"
                 },
                 {
-                    src: "/gallery_images/tunisia/kendo_13.jpeg",
-                    alt: "Tunis International Open - Image 13"
-                },
-                {
                     src: "/gallery_images/tunisia/kendo_14.jpeg",
                     alt: "Tunis International Open - Image 14"
                 },
                 {
                     src: "/gallery_images/tunisia/kendo_15.jpeg",
                     alt: "Tunis International Open - Image 15"
+                },
+                {
+                    src: "/gallery_images/tunisia/kendo_16.jpeg",
+                    alt: "Tunis International Open - Image 16"
+                },
+                {
+                    src: "/gallery_images/tunisia/kendo_18.jpeg",
+                    alt: "Tunis International Open - Image 18"
+                },
+                {
+                    src: "/gallery_images/tunisia/kendo_19.jpeg",
+                    alt: "Tunis International Open - Image 19"
                 }
             ]
         },
@@ -636,16 +640,44 @@ function GalleryPage() {
                     alt: "Saturday Training Session - Practice 3"
                 },
                 {
-                    src: "/gallery_images/saturday_training/practice_4.jpeg",
-                    alt: "Saturday Training Session - Practice 4"
-                },
-                {
-                    src: "/gallery_images/saturday_training/practice_5.jpeg",
-                    alt: "Saturday Training Session - Practice 5"
-                },
-                {
                     src: "/gallery_images/saturday_training/practice_6.jpeg",
                     alt: "Saturday Training Session - Practice 6"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_7.jpeg",
+                    alt: "Saturday Training Session - Practice 7"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_8.jpeg",
+                    alt: "Saturday Training Session - Practice 8"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_9.jpg",
+                    alt: "Saturday Training Session - Practice 9"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_10.jpg",
+                    alt: "Saturday Training Session - Practice 10"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_11.jpg",
+                    alt: "Saturday Training Session - Practice 11"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_12.jpg",
+                    alt: "Saturday Training Session - Practice 12"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_13.jpg",
+                    alt: "Saturday Training Session - Practice 13"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_14.jpg",
+                    alt: "Saturday Training Session - Practice 14"
+                },
+                {
+                    src: "/gallery_images/saturday_training/practice_15.jpg",
+                    alt: "Saturday Training Session - Practice 15"
                 }
             ]
         },
@@ -826,7 +858,7 @@ function GalleryPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$navigation$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                lineNumber: 264,
+                lineNumber: 296,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -838,12 +870,12 @@ function GalleryPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 opacity-[0.03]",
                                 style: {
-                                    backgroundImage: `linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)`,
+                                    backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.1) 1px, transparent 1px)`,
                                     backgroundSize: "50px 50px"
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                lineNumber: 269,
+                                lineNumber: 301,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -858,12 +890,12 @@ function GalleryPage() {
                                                 children: "Gallery"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                                lineNumber: 280,
+                                                lineNumber: 312,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                            lineNumber: 279,
+                                            lineNumber: 311,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -871,7 +903,7 @@ function GalleryPage() {
                                             children: "Moments in the Way of the Sword"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                            lineNumber: 282,
+                                            lineNumber: 314,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -879,24 +911,24 @@ function GalleryPage() {
                                             children: "Explore our collection of memorable moments, training sessions, tournaments, and community events that showcase the spirit of Kendo in Ghana."
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                            lineNumber: 285,
+                                            lineNumber: 317,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                    lineNumber: 278,
+                                    lineNumber: 310,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                lineNumber: 277,
+                                lineNumber: 309,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                        lineNumber: 267,
+                        lineNumber: 299,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -913,7 +945,7 @@ function GalleryPage() {
                                                     className: "h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                                    lineNumber: 299,
+                                                    lineNumber: 331,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -921,43 +953,43 @@ function GalleryPage() {
                                                     children: gallery.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                                    lineNumber: 300,
+                                                    lineNumber: 332,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                                    lineNumber: 301,
+                                                    lineNumber: 333,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                            lineNumber: 298,
+                                            lineNumber: 330,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$gallery$2f$gallery$2d$masonry$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GalleryMasonry"], {
                                             images: gallery.images
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                            lineNumber: 304,
+                                            lineNumber: 336,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                    lineNumber: 297,
+                                    lineNumber: 329,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                            lineNumber: 295,
+                            lineNumber: 327,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                        lineNumber: 294,
+                        lineNumber: 326,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -971,28 +1003,28 @@ function GalleryPage() {
                                         className: "absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/30 rounded-tl-3xl"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 315,
+                                        lineNumber: 347,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary/30 rounded-tr-3xl"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 316,
+                                        lineNumber: 348,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-primary/30 rounded-bl-3xl"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 317,
+                                        lineNumber: 349,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary/30 rounded-br-3xl"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 318,
+                                        lineNumber: 350,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1000,7 +1032,7 @@ function GalleryPage() {
                                         children: "Join Our Journey"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 320,
+                                        lineNumber: 352,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1008,7 +1040,7 @@ function GalleryPage() {
                                         children: "Be part of these memorable moments. Find a club near you and start your Kendo journey today."
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 321,
+                                        lineNumber: 353,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1020,7 +1052,7 @@ function GalleryPage() {
                                                 children: "Find a Club"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                                lineNumber: 325,
+                                                lineNumber: 357,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1029,40 +1061,40 @@ function GalleryPage() {
                                                 children: "Get in Touch"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                                lineNumber: 331,
+                                                lineNumber: 363,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                        lineNumber: 324,
+                                        lineNumber: 356,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                                lineNumber: 313,
+                                lineNumber: 345,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                            lineNumber: 312,
+                            lineNumber: 344,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                        lineNumber: 311,
+                        lineNumber: 343,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                lineNumber: 265,
+                lineNumber: 297,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/Desktop/Code/Kendo_Final/app/gallery/page.tsx",
-                lineNumber: 342,
+                lineNumber: 374,
                 columnNumber: 7
             }, this)
         ]

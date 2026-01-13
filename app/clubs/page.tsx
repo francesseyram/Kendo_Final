@@ -103,7 +103,7 @@ export default function ClubsPage() {
                       <h3 className="text-lg sm:text-xl font-bold mb-4 leading-snug">
                         {club.name}
                       </h3>
-                      <Button asChild variant="outline" className="gap-2 bg-transparent hover:bg-primary/10">
+                      <Button asChild variant="outline" className="gap-2 bg-transparent hover:!bg-primary hover:!text-primary-foreground hover:!border-primary dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary">
                         <Link href={`/clubs/${club.slug}`}>
                           Learn More <ArrowRight className="h-4 w-4" />
                         </Link>

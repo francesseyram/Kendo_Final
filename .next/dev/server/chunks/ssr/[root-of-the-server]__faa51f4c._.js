@@ -659,7 +659,11 @@ function Home() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "hidden md:block absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
+                        className: "hidden md:block absolute inset-0 opacity-[0.03]",
+                        style: {
+                            backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.03) 1px, transparent 1px)`,
+                            backgroundSize: "50px 50px"
+                        }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Code/Kendo_Final/app/page.tsx",
                         lineNumber: 31,
@@ -765,7 +769,7 @@ function Home() {
                                             size: "lg",
                                             variant: "outline",
                                             asChild: true,
-                                            className: "rounded-full px-8 h-14 text-base hover:bg-primary/10 hover:border-primary transition-all hover:scale-105 bg-transparent border-primary/30",
+                                            className: "rounded-full px-8 h-14 text-base hover:!bg-primary hover:!text-primary-foreground hover:!border-primary transition-all hover:scale-105 bg-transparent border-primary/30",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                 href: "/about",
                                                 children: "Learn More"
@@ -1555,7 +1559,7 @@ function Home() {
                                             size: "lg",
                                             variant: "outline",
                                             asChild: true,
-                                            className: "rounded-full px-8 h-14 text-base border-primary/30 hover:bg-primary/10 hover:border-primary transition-all hover:scale-105 bg-transparent",
+                                            className: "rounded-full px-8 h-14 text-base border-primary/30 hover:!bg-primary hover:!text-primary-foreground hover:!border-primary transition-all hover:scale-105 bg-transparent",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Code$2f$Kendo_Final$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                 href: "/contact",
                                                 children: "Get in Touch"

@@ -135,7 +135,7 @@ function DonateSuccessContent() {
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
               <Link href="/">Return Home</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="hover:!bg-primary hover:!text-primary-foreground hover:!border-primary dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary">
               <Link href="/donate">Make Another Donation</Link>
             </Button>
           </div>

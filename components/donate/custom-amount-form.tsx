@@ -23,7 +23,7 @@ export function CustomAmountForm() {
               <Button
                 key={value}
                 variant="outline"
-                className="min-w-[100px] bg-transparent"
+                className="min-w-[100px] bg-transparent hover:!bg-primary hover:!text-primary-foreground hover:!border-primary dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary"
                 onClick={() => {
                   setAmount(value.toString())
                   setShowForm(true)
