@@ -9,11 +9,10 @@ export const TUNIS_SPONSORSHIP_CONFIG = {
   location: "Tunisia",
   dates: "28th – 29th November 2026",
   
-  // Budget information (USD)
-  totalBudget: 17500,
-  amountReceived: 100.18, // UPDATE THIS VALUE as donations come in (in USD)
-  // Note: When donations come in GHS, convert to USD using: USD = GHS / 11
-  // Updated: Added 2 GHS (₵2) = 0.18 USD
+  // Budget information (GHS - Cedis)
+  totalBudget: 192500, // $17,500 USD = ₵192,500 GHS
+  amountReceived: 1101.98, // UPDATE THIS VALUE as donations come in (in GHS)
+  // Note: All amounts are stored in GHS (Cedis) in the backend
   
   // Team composition
   team: {
@@ -22,10 +21,10 @@ export const TUNIS_SPONSORSHIP_CONFIG = {
     total: 11,
   },
   
-  // Budget breakdown (per person in USD)
+  // Budget breakdown (per person in GHS - Cedis)
   budget: {
-    airTicket: 1100,
-    hotelMeals: 500,
+    airTicket: 12100, // $1,100 USD = ₵12,100 GHS
+    hotelMeals: 5500, // $500 USD = ₵5,500 GHS
   },
   
   // Currency conversion (update as needed)
@@ -38,7 +37,7 @@ export const TUNIS_SPONSORSHIP_CONFIG = {
 }
 
 /**
- * Calculate outstanding amount
+ * Calculate outstanding amount (in GHS)
  */
 export function getOutstandingAmount(): number {
   return TUNIS_SPONSORSHIP_CONFIG.totalBudget - TUNIS_SPONSORSHIP_CONFIG.amountReceived
@@ -67,15 +66,16 @@ export function convertGhsToUsd(ghsAmount: number): number {
 
 /**
  * Get total budget in GHS (Cedis)
+ * Note: Already stored in GHS, returns as-is
  */
 export function getTotalBudgetGhs(): number {
-  return convertUsdToGhs(TUNIS_SPONSORSHIP_CONFIG.totalBudget)
+  return TUNIS_SPONSORSHIP_CONFIG.totalBudget
 }
 
 /**
  * Get amount received in GHS (Cedis)
- * Note: amountReceived is stored in USD, convert to GHS
+ * Note: Already stored in GHS, returns as-is
  */
 export function getAmountReceivedGhs(): number {
-  return convertUsdToGhs(TUNIS_SPONSORSHIP_CONFIG.amountReceived)
+  return TUNIS_SPONSORSHIP_CONFIG.amountReceived
 }

@@ -56,6 +56,11 @@ export async function POST(request: NextRequest) {
     const event = JSON.parse(body)
     eventId = event.data?.reference || event.id || `event_${Date.now()}`
 
+    // Ensure eventId is never null
+    if (!eventId) {
+      eventId = `event_${Date.now()}`
+    }
+
     // Idempotency check - prevent duplicate processing
     if (processedEvents.has(eventId)) {
       const processedAt = processedEvents.get(eventId)!
@@ -173,23 +178,45 @@ async function handleSuccessfulPayment(data: any, eventId: string) {
     // Update sponsorship total if this is a sponsorship donation
     if (isSponsorship) {
       try {
-        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.APP_BASE_URL || "http://localhost:3000"
-        const response = await fetch(`${baseUrl}/api/sponsorship/total`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            amountGHS: transaction.amount,
-          }),
-        })
-
-        if (response.ok) {
-          const result = await response.json()
-          console.log("[WEBHOOK] Sponsorship total updated:", result)
-        } else {
-          console.error("[WEBHOOK] Failed to update sponsorship total")
+        const { convertGhsToUsd } = await import("@/lib/config/sponsorship")
+        const { promises: fs } = await import("fs")
+        const path = await import("path")
+        
+        const dataPath = path.join(process.cwd(), "data", "sponsorship.json")
+        // transaction.amount is already in GHS, no conversion needed
+        
+        // Read current total (already in GHS)
+        let currentTotal = 0
+        try {
+          const fileContent = await fs.readFile(dataPath, "utf-8")
+          const data = JSON.parse(fileContent)
+          currentTotal = data.amountReceived || 0
+        } catch {
+          // File doesn't exist, initialize from config
+          const { TUNIS_SPONSORSHIP_CONFIG } = await import("@/lib/config/sponsorship")
+          currentTotal = TUNIS_SPONSORSHIP_CONFIG.amountReceived // Already in GHS
         }
+        
+        // Update total (both amounts are in GHS)
+        const newTotal = currentTotal + transaction.amount
+        
+        // Ensure directory exists
+        await fs.mkdir(path.dirname(dataPath), { recursive: true })
+        
+        // Write updated total (in GHS)
+        await fs.writeFile(
+          dataPath,
+          JSON.stringify({ amountReceived: newTotal }, null, 2),
+          "utf-8"
+        )
+        
+        const addedUSD = convertGhsToUsd(transaction.amount)
+        const newTotalUSD = convertGhsToUsd(newTotal)
+        
+        console.log("[WEBHOOK] Sponsorship total updated:", {
+          added: { ghs: transaction.amount, usd: addedUSD },
+          newTotal: { ghs: newTotal, usd: newTotalUSD },
+        })
       } catch (updateError) {
         // Don't fail webhook if sponsorship update fails
         console.error("[WEBHOOK] Error updating sponsorship total:", updateError)

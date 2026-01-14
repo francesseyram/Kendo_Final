@@ -31,7 +31,7 @@ export default function Home() {
         <div className="hidden md:block absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--primary-r), var(--primary-g), var(--primary-b), 0.03) 1px, transparent 1px)`, backgroundSize: "50px 50px" }} />
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 text-center pt-16 sm:pt-20">
-          <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8" data-aos="fade-up" data-aos-easing="ease-out-cubic">
+          <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8" data-aos="fade-up" data-aos-easing="ease-out-cubic" suppressHydrationWarning>
             {/* Badge with red accent */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-primary/30 text-xs sm:text-sm font-medium">
               <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />

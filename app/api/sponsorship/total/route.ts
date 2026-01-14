@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
+import { promises as fs } from "fs"
+import path from "path"
 
 /**
  * Get current sponsorship total for Tunis International Open
@@ -7,32 +9,64 @@ import { NextRequest, NextResponse } from "next/server"
  * Returns the total amount received for the sponsorship campaign
  */
 
-// In-memory storage (in production, this would come from database)
-// This tracks only sponsorship donations for the Tunis campaign
-// Initialize from config
-let sponsorshipTotal: number | null = null
+const SPONSORSHIP_DATA_PATH = path.join(process.cwd(), "data", "sponsorship.json")
 
-async function getInitialAmount() {
-  if (sponsorshipTotal === null) {
+async function readSponsorshipTotal(): Promise<number> {
+  try {
+    const fileContent = await fs.readFile(SPONSORSHIP_DATA_PATH, "utf-8")
+    const data = JSON.parse(fileContent)
+    return data.amountReceived || 0 // Returns GHS
+  } catch (error) {
+    // If file doesn't exist, initialize from config
     const { TUNIS_SPONSORSHIP_CONFIG } = await import("@/lib/config/sponsorship")
-    sponsorshipTotal = TUNIS_SPONSORSHIP_CONFIG.amountReceived
+    const initialAmount = TUNIS_SPONSORSHIP_CONFIG.amountReceived // Already in GHS
+    
+    // Create directory if it doesn't exist
+    await fs.mkdir(path.dirname(SPONSORSHIP_DATA_PATH), { recursive: true })
+    
+    // Write initial file
+    await fs.writeFile(
+      SPONSORSHIP_DATA_PATH,
+      JSON.stringify({ amountReceived: initialAmount }, null, 2),
+      "utf-8"
+    )
+    
+    return initialAmount
   }
-  return sponsorshipTotal
+}
+
+async function writeSponsorshipTotal(amountGHS: number): Promise<void> {
+  // Create directory if it doesn't exist
+  await fs.mkdir(path.dirname(SPONSORSHIP_DATA_PATH), { recursive: true })
+  
+  await fs.writeFile(
+    SPONSORSHIP_DATA_PATH,
+    JSON.stringify({ amountReceived: amountGHS }, null, 2),
+    "utf-8"
+  )
 }
 
 export async function GET(request: NextRequest) {
   try {
-    const { convertUsdToGhs } = await import("@/lib/config/sponsorship")
+    const { convertGhsToUsd, TUNIS_SPONSORSHIP_CONFIG } = await import("@/lib/config/sponsorship")
     
-    const totalUSD = await getInitialAmount()
-    const totalGHS = convertUsdToGhs(totalUSD)
+    const totalGHS = await readSponsorshipTotal() // Already in GHS
+    const totalUSD = convertGhsToUsd(totalGHS)
+    
+    const targetGHS = TUNIS_SPONSORSHIP_CONFIG.totalBudget // Already in GHS
+    const targetUSD = convertGhsToUsd(targetGHS)
 
     return NextResponse.json({
       success: true,
       amountReceived: {
-        usd: totalUSD,
         ghs: totalGHS,
+        usd: totalUSD,
       },
+      targetAmount: {
+        ghs: targetGHS,
+        usd: targetUSD,
+      },
+      progress: (totalGHS / targetGHS) * 100,
     })
   } catch (error) {
     console.error("[SPONSORSHIP_TOTAL] Error:", error)
@@ -58,25 +92,28 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Initialize if needed
-    await getInitialAmount()
+    const { convertGhsToUsd } = await import("@/lib/config/sponsorship")
 
-    const { convertGhsToUsd, convertUsdToGhs } = await import("@/lib/config/sponsorship")
-    const amountUSD = convertGhsToUsd(amountGHS)
+    // Read current total (already in GHS) and add new amount (also in GHS)
+    const currentTotal = await readSponsorshipTotal()
+    const newTotal = currentTotal + amountGHS
 
-    // Add to total
-    sponsorshipTotal! += amountUSD
+    // Write updated total (in GHS)
+    await writeSponsorshipTotal(newTotal)
+
+    const newTotalUSD = convertGhsToUsd(newTotal)
+    const addedUSD = convertGhsToUsd(amountGHS)
 
     console.log("[SPONSORSHIP_TOTAL] Updated:", {
-      added: { ghs: amountGHS, usd: amountUSD },
-      newTotal: { ghs: convertUsdToGhs(sponsorshipTotal!), usd: sponsorshipTotal },
+      added: { ghs: amountGHS, usd: addedUSD },
+      newTotal: { ghs: newTotal, usd: newTotalUSD },
     })
 
     return NextResponse.json({
       success: true,
       total: {
-        usd: sponsorshipTotal,
-        ghs: convertUsdToGhs(sponsorshipTotal!),
+        ghs: newTotal,
+        usd: newTotalUSD,
       },
     })
   } catch (error) {

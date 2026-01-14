@@ -61,7 +61,7 @@ function DonateSuccessContent() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
       <main className="flex-1 flex items-center justify-center px-4 py-16 sm:py-24">
-        <div className="max-w-md w-full text-center space-y-6" data-aos="fade-up">
+        <div className="max-w-md w-full text-center space-y-6">
           {verifying ? (
             <>
               <div className="flex justify-center">

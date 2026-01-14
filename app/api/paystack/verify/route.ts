@@ -152,6 +152,61 @@ export async function POST(request: NextRequest) {
         gateway_response: transactionData.gateway_response,
       })
 
+      // Update sponsorship campaign total if this is a sponsorship donation
+      const metadata = transaction.metadata
+      if (
+        metadata?.donation_type === "SPONSORSHIP" ||
+        (transactionData.donation_type === "SPONSORSHIP" &&
+         metadata?.campaign === "2nd Tunis International Open Championships")
+      ) {
+        try {
+          const { promises: fs } = await import("fs")
+          const path = await import("path")
+          
+          const dataPath = path.join(process.cwd(), "data", "sponsorship.json")
+          // transactionData.amount is already in GHS, no conversion needed
+          const amountGHS = transactionData.amount
+          
+          // Read current total (already in GHS)
+          let currentTotal = 0
+          try {
+            const fileContent = await fs.readFile(dataPath, "utf-8")
+            const data = JSON.parse(fileContent)
+            currentTotal = data.amountReceived || 0
+          } catch {
+            // File doesn't exist, initialize from config
+            const { TUNIS_SPONSORSHIP_CONFIG } = await import("@/lib/config/sponsorship")
+            currentTotal = TUNIS_SPONSORSHIP_CONFIG.amountReceived // Already in GHS
+          }
+          
+          // Update total (both amounts are in GHS)
+          const newTotal = currentTotal + amountGHS
+          
+          // Ensure directory exists
+          await fs.mkdir(path.dirname(dataPath), { recursive: true })
+          
+          // Write updated total (in GHS)
+          await fs.writeFile(
+            dataPath,
+            JSON.stringify({ amountReceived: newTotal }, null, 2),
+            "utf-8"
+          )
+          
+          const { convertGhsToUsd } = await import("@/lib/config/sponsorship")
+          const addedUSD = convertGhsToUsd(amountGHS)
+          const newTotalUSD = convertGhsToUsd(newTotal)
+          
+          console.log("[VERIFY] Sponsorship total updated:", {
+            reference: transaction.reference,
+            added: { ghs: amountGHS, usd: addedUSD },
+            newTotal: { ghs: newTotal, usd: newTotalUSD },
+          })
+        } catch (updateError) {
+          // Don't fail verification if sponsorship update fails
+          console.error("[VERIFY] Error updating sponsorship total:", updateError)
+        }
+      }
+
       // Also log for monitoring
       await logTransaction({
         ...transactionData,
@@ -212,7 +267,8 @@ async function logTransaction(transaction: {
   gateway_response: string
   channel: string
   paid_at?: string
-  created_at: string
+  created_at?: string
+  verified_at?: string
 }) {
   try {
     // Log to console (in production, you'd log to a database or file)

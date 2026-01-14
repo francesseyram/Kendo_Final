@@ -20,8 +20,9 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
   const [anonymous, setAnonymous] = useState(false)
 
   // Amount is in GHS (Cedis) - convert to USD for display/reporting
-  const parsedAmountGHS = parseFloat(amount)
-  const parsedAmountUSD = convertGhsToUsd(parsedAmountGHS)
+  const parsedAmountGHS = parseFloat(amount) || 0
+  const parsedAmountUSD = parsedAmountGHS > 0 ? convertGhsToUsd(parsedAmountGHS) : 0
+  const isValidAmount = parsedAmountGHS > 0 && !isNaN(parsedAmountGHS) && isFinite(parsedAmountGHS)
 
   return (
     <div className="rounded-xl border border-border/60 bg-background/60 backdrop-blur-sm p-6 sm:p-8 space-y-6 glass">
@@ -102,7 +103,7 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
         </div>
       </div>
 
-      {parsedAmountGHS > 0 && email && (
+      {isValidAmount && email && email.includes("@") ? (
         <PaystackPaymentButton
           amount={parsedAmountGHS}
           email={email}
@@ -122,6 +123,18 @@ export function TunisSponsorshipForm({ presetAmount, onCancel }: TunisSponsorshi
             amount_usd: parsedAmountUSD, // For reference/reporting
           }}
         />
+      ) : (
+        <Button
+          disabled
+          size="lg"
+          className="w-full bg-muted text-muted-foreground cursor-not-allowed"
+        >
+          {!email || !email.includes("@") 
+            ? "Please enter a valid email address" 
+            : !isValidAmount 
+            ? "Please enter a valid amount (minimum ₵1)" 
+            : "Complete the form to continue"}
+        </Button>
       )}
 
       <Button

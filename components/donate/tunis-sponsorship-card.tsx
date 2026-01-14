@@ -19,18 +19,18 @@ import {
 export function TunisSponsorshipCard() {
   const [showForm, setShowForm] = useState(false)
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null)
-  const [amountReceivedUSD, setAmountReceivedUSD] = useState(TUNIS_SPONSORSHIP_CONFIG.amountReceived)
+  const [amountReceivedGHS, setAmountReceivedGHS] = useState(TUNIS_SPONSORSHIP_CONFIG.amountReceived)
   const [isLoading, setIsLoading] = useState(true)
 
   // Fetch current sponsorship total
   useEffect(() => {
     const fetchTotal = async () => {
       try {
-        const response = await fetch("/api/sponsorship/total")
+        const response = await fetch("/api/sponsorship/total", { cache: "no-store" })
         if (response.ok) {
           const data = await response.json()
           if (data.success) {
-            setAmountReceivedUSD(data.amountReceived.usd)
+            setAmountReceivedGHS(data.amountReceived.ghs)
           }
         }
       } catch (error) {
@@ -40,10 +40,8 @@ export function TunisSponsorshipCard() {
       }
     }
 
+    // Fetch on mount
     fetchTotal()
-
-    // Poll for updates every 5 seconds (in case of webhook updates)
-    const interval = setInterval(fetchTotal, 5000)
 
     // Listen for custom event to refresh immediately after donation
     const handleDonationSuccess = () => {
@@ -60,20 +58,21 @@ export function TunisSponsorshipCard() {
     }
 
     return () => {
-      clearInterval(interval)
       window.removeEventListener("donation-success", handleDonationSuccess)
     }
   }, [])
 
-  const totalBudgetUSD = TUNIS_SPONSORSHIP_CONFIG.totalBudget
   const totalBudgetGHS = getTotalBudgetGhs()
-  const amountReceivedGHS = convertUsdToGhs(amountReceivedUSD)
-  const outstandingUSD = totalBudgetUSD - amountReceivedUSD
-  const outstandingGHS = convertUsdToGhs(outstandingUSD)
-  const progress = (amountReceivedUSD / totalBudgetUSD) * 100
+  const totalBudgetUSD = convertGhsToUsd(totalBudgetGHS)
+  const amountReceivedUSD = convertGhsToUsd(amountReceivedGHS)
+  const outstandingGHS = totalBudgetGHS - amountReceivedGHS
+  const outstandingUSD = convertGhsToUsd(outstandingGHS)
+  const progress = (amountReceivedGHS / totalBudgetGHS) * 100
 
-  const airTicketTotal = TUNIS_SPONSORSHIP_CONFIG.budget.airTicket * TUNIS_SPONSORSHIP_CONFIG.team.total
-  const hotelMealsTotal = TUNIS_SPONSORSHIP_CONFIG.budget.hotelMeals * TUNIS_SPONSORSHIP_CONFIG.team.total
+  const airTicketTotal = TUNIS_SPONSORSHIP_CONFIG.budget.airTicket * TUNIS_SPONSORSHIP_CONFIG.team.total // Already in GHS
+  const hotelMealsTotal = TUNIS_SPONSORSHIP_CONFIG.budget.hotelMeals * TUNIS_SPONSORSHIP_CONFIG.team.total // Already in GHS
+  const airTicketTotalUSD = convertGhsToUsd(airTicketTotal)
+  const hotelMealsTotalUSD = convertGhsToUsd(hotelMealsTotal)
 
   const presetAmounts = TUNIS_SPONSORSHIP_CONFIG.presetAmounts
 
@@ -149,12 +148,12 @@ export function TunisSponsorshipCard() {
           </h3>
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Air Ticket ({TUNIS_SPONSORSHIP_CONFIG.team.total} × ${TUNIS_SPONSORSHIP_CONFIG.budget.airTicket})</span>
-              <span className="font-medium">${airTicketTotal.toLocaleString()}</span>
+              <span className="text-muted-foreground">Air Ticket ({TUNIS_SPONSORSHIP_CONFIG.team.total} × ₵{TUNIS_SPONSORSHIP_CONFIG.budget.airTicket.toLocaleString()})</span>
+              <span className="font-medium">₵{airTicketTotal.toLocaleString()}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Hotel & Meals ({TUNIS_SPONSORSHIP_CONFIG.team.total} × ${TUNIS_SPONSORSHIP_CONFIG.budget.hotelMeals})</span>
-              <span className="font-medium">${hotelMealsTotal.toLocaleString()}</span>
+              <span className="text-muted-foreground">Hotel & Meals ({TUNIS_SPONSORSHIP_CONFIG.team.total} × ₵{TUNIS_SPONSORSHIP_CONFIG.budget.hotelMeals.toLocaleString()})</span>
+              <span className="font-medium">₵{hotelMealsTotal.toLocaleString()}</span>
             </div>
             <div className="border-t border-border/60 pt-2 mt-2 flex justify-between font-semibold">
               <span>Total Budget Required</span>

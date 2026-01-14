@@ -8,12 +8,19 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    AOS.init({
-      duration: 900,
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 80,
-    })
+    // Delay AOS initialization to prevent hydration mismatches
+    const timer = setTimeout(() => {
+      AOS.init({
+        duration: 900,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+        startEvent: "DOMContentLoaded",
+      })
+      AOS.refresh()
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, [])
 
   return (

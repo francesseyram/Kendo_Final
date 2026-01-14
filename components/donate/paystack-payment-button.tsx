@@ -121,16 +121,19 @@ export function PaystackPaymentButton({
     
     if (!paystackAvailable) {
       console.error("Paystack script not loaded")
+      alert("Payment gateway is still loading. Please wait a moment and try again.")
       return
     }
 
     if (!publicKey) {
-      // Fail silently - no alert or error message to user
+      console.error("Payment gateway not configured. NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY is missing.")
+      alert("Payment gateway is not configured. Please contact support.")
       return
     }
 
     if (!isValidAmount) {
       console.error(`Invalid donation amount: ₵${amount}`)
+      alert(`Invalid donation amount: ₵${amount}. Please enter a valid amount.`)
       return
     }
 
@@ -238,9 +241,10 @@ export function PaystackPaymentButton({
       })
 
       handler.openIframe()
-    } catch (error) {
+    } catch (error: any) {
       console.error("Payment initialization error:", error)
       setIsProcessing(false)
+      alert(`Payment initialization failed: ${error?.message || "Unknown error"}. Please try again or contact support.`)
     }
   }
 
@@ -271,13 +275,14 @@ export function PaystackPaymentButton({
       />
       <Button
         onClick={handlePayment}
-        disabled={(!isScriptLoaded && !checkScriptLoaded()) || isProcessing || !publicKey}
+        disabled={(!isScriptLoaded && !checkScriptLoaded()) || isProcessing || !publicKey || !isValidAmount}
         className={cn(
           className,
           variant === "outline" && "hover:!bg-primary hover:!text-primary-foreground hover:!border-primary dark:hover:!bg-primary dark:hover:!text-primary-foreground dark:hover:!border-primary"
         )}
         variant={variant}
         size={size}
+        title={!publicKey ? "Payment gateway not configured" : !isValidAmount ? "Invalid amount" : !isScriptLoaded ? "Loading payment gateway..." : ""}
       >
         {isProcessing ? "Processing..." : label}
       </Button>
