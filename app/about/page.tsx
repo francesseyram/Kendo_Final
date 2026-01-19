@@ -57,7 +57,6 @@ export default function AboutPage() {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             <p className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-xs sm:text-sm text-white/80 max-w-xs sm:max-w-md">
-              Discipline. Respect. Continuous self-improvement.
             </p>
           </div>
 
