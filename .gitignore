@@ -59,4 +59,4 @@ temp/
 
 # Editor backup files
 *.bak
-*.tmp
+*.tmp.next/
