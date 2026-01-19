@@ -5,7 +5,7 @@
  */
 
 export const TUNIS_SPONSORSHIP_CONFIG = {
-  eventName: "2nd Tunis International Open Championships",
+  eventName: "2nd Tunis International Kendo Open Championships",
   location: "Tunisia",
   dates: "28th – 29th November 2026",
   

@@ -156,7 +156,7 @@ async function handleSuccessfulPayment(data: any, eventId: string) {
                           (f: any) => f.variable_name === "donation_type"
                         )?.value
     const isSponsorship = donationType === "SPONSORSHIP" || 
-                         transaction.metadata?.campaign === "2nd Tunis International Open Championships"
+                         transaction.metadata?.campaign === "2nd Tunis International Kendo Open Championships"
 
     // Save transaction to database (idempotent - upsert by reference)
     const { saveDonation } = await import("@/lib/db/transactions")

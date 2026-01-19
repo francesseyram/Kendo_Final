@@ -157,7 +157,7 @@ export async function POST(request: NextRequest) {
       if (
         metadata?.donation_type === "SPONSORSHIP" ||
         (transactionData.donation_type === "SPONSORSHIP" &&
-         metadata?.campaign === "2nd Tunis International Open Championships")
+         metadata?.campaign === "2nd Tunis International Kendo Open Championships")
       ) {
         try {
           const { promises: fs } = await import("fs")
