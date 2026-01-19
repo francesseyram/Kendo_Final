@@ -1,5 +1,0 @@
-{
-  "/api/sponsorship/total/route": "app/api/sponsorship/total/route.js",
-  "/donate/page": "app/donate/page.js",
-  "/page": "app/page.js"
-}

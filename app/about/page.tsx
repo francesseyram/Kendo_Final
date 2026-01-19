@@ -32,7 +32,7 @@ export default function AboutPage() {
               </span>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-gradient">
-                The Way of the Sword in Ghana
+                The Way of the Sword
               </h1>
 
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -57,7 +57,6 @@ export default function AboutPage() {
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
             <p className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-xs sm:text-sm text-white/80 max-w-xs sm:max-w-md">
-              Discipline. Respect. Continuous self-improvement.
             </p>
           </div>
 
@@ -209,11 +208,7 @@ export default function AboutPage() {
                 International Kendo Federation by 2025.
               </p>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                The federation currently benefits from training support provided by the Embassy of
-                Japan, helping to develop skilled instructors with backgrounds in Judo, Aikido,
-                Karate-Do, and Taekwondo.
-              </p>
+              
             </section>
 
             {/* Governance */}
@@ -221,11 +216,11 @@ export default function AboutPage() {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient">Governance</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
                 {[
-                  ["President & Acting Secretary", "Sesinam Don Dzakpasu"],
+                  ["President & Acting Secretary", "Sesinam Don Dzakpasu ( 1st Dan )"],
                   ["Vice President", "Dickson Enam Kwame Acolatse"],
                   ["Technical Director", "Promise Bruce Adjaho"],
                   ["Deputy Technical Director", "Daniel Barnes"],
-                  ["Chief Instructor", "Russo Thierry Rusman De-Roch"],
+                  ["Chief Instructor", "Russo Thierry Rusman De-Roch ( 1st Dan )"],
                   ["Executive Member & Instructor", "Randolph Darku"],
                   ["Executive Member", "Wahab El Housseini"],
                 ].map(([role, name]) => (
